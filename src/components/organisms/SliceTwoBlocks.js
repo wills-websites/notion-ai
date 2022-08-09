@@ -8,13 +8,13 @@ import Container from "../atoms/Container";
 const Block = styled.div`
   position: relative;
   width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border-radius: 1rem;
   background-color: pink;
   padding: 2rem;
-
-  p:nth-child(2) {
-    margin-bottom: 10rem;
-  }
 
   > :first-child {
     margin-top: 0;
@@ -48,8 +48,10 @@ function SliceTwoBlocks({slice}) {
             <h1>{title.text}</h1>
             <Inner>
                 <Block>
-                    <p>{block_1_title.text}</p>
-                    <PrismicRichText render={block_1_description.richText}/>
+                    <div>
+                        <p>{block_1_title.text}</p>
+                        <PrismicRichText render={block_1_description.richText}/>
+                    </div>
                     <Link to="/">
                         <button aria-label="button" className="button fill"><PrismicRichText
                             render={block_1_cta.richText}/>
@@ -57,8 +59,10 @@ function SliceTwoBlocks({slice}) {
                     </Link>
                 </Block>
                 <Block>
-                    <p>{block_2_title.text}</p>
-                    <PrismicRichText render={block_2_description.richText}/>
+                    <div>
+                        <p>{block_2_title.text}</p>
+                        <PrismicRichText render={block_2_description.richText}/>
+                    </div>
                     <Link to="/">
                         <button aria-label="button" className="button link"><PrismicRichText
                             render={block_2_cta.richText}/>
