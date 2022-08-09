@@ -1,5 +1,4 @@
 import React from "react"
-import Container from "../atoms/Container"
 import {useStaticQuery, graphql} from "gatsby";
 import styled from "styled-components";
 import {GatsbyImage} from "gatsby-plugin-image";
@@ -14,6 +13,8 @@ const Inner = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
+  max-width: ${(props) => props.theme.typography.maxScreen}px;
+  margin: 0 auto;
 `
 
 const Clients = styled.p`
@@ -66,12 +67,11 @@ function Footer() {
     `)
     return (
         <Holder>
-            <Container>
-                <Inner>
-                    <Clients>
-                        Our platforms have been trusted by
-                        {data.prismicFooter.data.clients.map((loop, i) => (
-                            <span key={i} className="item">
+            <Inner>
+                <Clients>
+                    Our platforms have been trusted by
+                    {data.prismicFooter.data.clients.map((loop, i) => (
+                        <span key={i} className="item">
                                 <>&nbsp;<GatsbyImage style={{maxHeight: '1rem', maxWidth: '1rem'}}
                                                      imgStyle={{objectFit: 'contain'}}
                                                      image={loop.logo.gatsbyImageData}
@@ -79,26 +79,25 @@ function Footer() {
                                     {loop.client.text}
                                 </>
                             </span>
-                        ))}
-                    </Clients>
-                    <ContentHolder>
+                    ))}
+                </Clients>
+                <ContentHolder>
+                    <ButtonHolder>
+                        <button className="button fill">NotionAi</button>
+                        <button className="button fill">Start your free trial today</button>
+                    </ButtonHolder>
+                    <div><p>Location</p>
+                        <p>Bay 7, Sydney Harbour Bridge Warehouses,<br/> Middlemiss Street, Lavender Bay NSW
+                            2060<br/>
+                            Australia</p>
                         <ButtonHolder>
-                            <button className="button fill">NotionAi</button>
-                            <button className="button fill">Start your free trial today</button>
+                            <button className="button fill">Email</button>
+                            <button className="button fill">LinkedIn</button>
+                            <button className="button fill">Instagram</button>
                         </ButtonHolder>
-                        <div><p>Location</p>
-                            <p>Bay 7, Sydney Harbour Bridge Warehouses,<br/> Middlemiss Street, Lavender Bay NSW
-                                2060<br/>
-                                Australia</p>
-                            <ButtonHolder>
-                                <button className="button fill">Email</button>
-                                <button className="button fill">LinkedIn</button>
-                                <button className="button fill">Instagram</button>
-                            </ButtonHolder>
-                        </div>
-                    </ContentHolder>
-                </Inner>
-            </Container>
+                    </div>
+                </ContentHolder>
+            </Inner>
         </Holder>
     )
 }
