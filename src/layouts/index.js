@@ -12,23 +12,22 @@ import {ThemeProvider} from "styled-components";
 import {theme} from "../utils/styling";
 
 function Index({location, children}) {
-  return (
-    <ThemeProvider theme={theme}>
-      <>
-        <GlobalStyles />
-        <Header />
-        <Navigation />
-        <Transition location={location}>
-          <main>{children}</main>
-        </Transition>
-        <Footer />
-      </>
-    </ThemeProvider>
-  );
+    return (
+        <ThemeProvider theme={theme}>
+            <>
+                <GlobalStyles/>
+                <Header/>
+                <Transition location={location}>
+                    <main>{children}</main>
+                </Transition>
+                <Footer/>
+            </>
+        </ThemeProvider>
+    );
 }
 
 Index.propTypes = {
-  children: PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired,
 };
 
 export default Index;
