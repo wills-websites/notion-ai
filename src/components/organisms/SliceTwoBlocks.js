@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from "prop-types";
-import {graphql} from "gatsby";
+import {graphql, Link} from "gatsby";
 import PrismicRichText from "../atoms/PrismicRichText";
 import Container from "../atoms/Container";
 
@@ -50,12 +50,20 @@ function SliceTwoBlocks({slice}) {
                 <Block>
                     <p>{block_1_title.text}</p>
                     <PrismicRichText render={block_1_description.richText}/>
-                    <button><PrismicRichText render={block_1_cta.richText}/></button>
+                    <Link to="/">
+                        <button aria-label="button" className="button fill"><PrismicRichText
+                            render={block_1_cta.richText}/>
+                        </button>
+                    </Link>
                 </Block>
                 <Block>
                     <p>{block_2_title.text}</p>
                     <PrismicRichText render={block_2_description.richText}/>
-                    <button><PrismicRichText render={block_2_cta.richText}/></button>
+                    <Link to="/">
+                        <button aria-label="button" className="button link"><PrismicRichText
+                            render={block_2_cta.richText}/>
+                        </button>
+                    </Link>
                 </Block>
             </Inner>
         </Container>

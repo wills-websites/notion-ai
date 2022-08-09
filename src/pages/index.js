@@ -7,8 +7,8 @@ function IndexPage({data}) {
     const {body} = data.prismicPage.data
     return (
         <>
-            <Seo title="Home" />
-            {body.map(slice => <SlicePicker key={slice.id} slice={slice} />)}
+            <Seo title="Home"/>
+            {body.map(slice => <SlicePicker key={slice.id} slice={slice}/>)}
         </>
     )
 };
@@ -21,6 +21,8 @@ export const homePageQuery = graphql`
             data {
                 body {
                     ... on PrismicPageDataBodyTwoBlocks { ...TwoBlocks }
+                    ... on PrismicPageDataBodyCta { ...CTA }
+                    ... on PrismicPageDataBodyTopicList { ...TopicList }
                 }
             }
         }
