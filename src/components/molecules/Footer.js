@@ -15,9 +15,10 @@ const Inner = styled.div`
   row-gap: 2rem;
   max-width: ${(props) => props.theme.typography.maxScreen}px;
   margin: 0 auto;
+  height: 500px;
 `
 
-const Clients = styled.p`
+const Clients = styled.div`
   .item {
     display: inline-block;
 
@@ -69,7 +70,7 @@ function Footer() {
         <Holder>
             <Inner>
                 <Clients>
-                    Our platforms have been trusted by
+                    <span>Our platforms have been trusted by</span>
                     {data.prismicFooter.data.clients.map((loop, i) => (
                         <span key={i} className="item">
                                 <>&nbsp;<GatsbyImage style={{maxHeight: '1rem', maxWidth: '1rem'}}
