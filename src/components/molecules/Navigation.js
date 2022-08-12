@@ -46,9 +46,9 @@ class Navigation extends Component {
             <nav className="Navigation">
                 <Holder>
                     <ul>
-                        <li><Link to="/products/">Products</Link></li>
+                        <li><Link to="/">Products</Link></li>
                         <li><Link to="/plans/">Plans</Link></li>
-                        <li><Link to="/articles/">Articles</Link></li>
+                        <li><Link to="/">Articles</Link></li>
                         <li><Link to="/about/">About</Link></li>
                     </ul>
                 </Holder>
