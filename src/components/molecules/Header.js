@@ -3,7 +3,9 @@ import styled from "styled-components";
 import Navigation from "./Navigation";
 import {Link} from "gatsby";
 import PropTypes from 'prop-types';
+import classNames from "classnames";
 import Container from "../atoms/Container";
+import HeaderScrollTransition from "../atoms/HeaderScrollTransition";
 
 const Holder = styled.div`
 `;
@@ -20,7 +22,7 @@ const Grid = styled.div`
   }
 
   .logo-holder {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0);
     width: min-content;
     border-radius: 2rem;
     padding: 0.5rem 2rem;
@@ -63,21 +65,27 @@ const LargeNavHolder = styled.div`
 
 function Header() {
     const [navOpen, setNavOpen] = useState(false);
+    let gridClasses = classNames({
+        'header-grid': true,
+        'nav-open': navOpen,
 
+    });
     return (
         <Holder>
-            <Container>
-                <Grid navOpen={navOpen}>
-                    <div className="logo-holder">
-                        <Link to="/">
-                            <p>NotionAi</p>
-                        </Link>
-                    </div>
-                    <LargeNavHolder>
-                        <Navigation/>
-                    </LargeNavHolder>
-                </Grid>
-            </Container>
+            <HeaderScrollTransition>
+                <Container>
+                    <Grid className={gridClasses} navOpen={navOpen}>
+                        <div className="logo-holder">
+                            <Link to="/">
+                                <p>NotionAi</p>
+                            </Link>
+                        </div>
+                        <LargeNavHolder>
+                            <Navigation/>
+                        </LargeNavHolder>
+                    </Grid>
+                </Container>
+            </HeaderScrollTransition>
         </Holder>
     );
 }

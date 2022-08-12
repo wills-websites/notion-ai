@@ -1,13 +1,12 @@
 import React, {Component} from "react"
 import {Link} from "gatsby"
-import Container from "../atoms/Container"
 import styled from "styled-components";
 
 const Holder = styled.div`
   ul {
     list-style: none;
     margin: 0 0 0 auto;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0);
     backdrop-filter: blur(5px);
     width: min-content;
     border-radius: 2rem;

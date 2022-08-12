@@ -1,10 +1,9 @@
-import React, {Component} from "react";
+import React from "react";
 import PropTypes from "prop-types";
 // import '../utils/fontface.css';
 
 import Header from "../components/molecules/Header";
 import Footer from "../components/molecules/Footer";
-import Navigation from "../components/molecules/Navigation";
 import Transition from "../components/atoms/Transition";
 
 import GlobalStyles from "../components/atoms/GlobalStyles";
