@@ -4,7 +4,7 @@ import styled from "styled-components";
 import {GatsbyImage} from "gatsby-plugin-image";
 
 const Holder = styled.div`
-  background-color: black;
+  background-color: red;
   color: white;
 `
 
@@ -19,10 +19,10 @@ const Inner = styled.div`
 
 const Clients = styled.p`
   .item {
-    display: inline;
+    display: inline-block;
 
     > * {
-      vertical-align: middle;
+      vertical-align: -10%;
     }
   }
 

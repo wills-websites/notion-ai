@@ -9,6 +9,15 @@ import {GatsbyImage} from "gatsby-plugin-image";
 const Holder = styled.div`
   padding: 10rem 0;
 `
+const TopicsHolder = styled.div`
+    .item {
+    display: inline-block;
+
+    > * {
+      vertical-align: -10%;
+    }
+}
+`
 
 function SliceTopicList({slice}) {
     const {
@@ -21,7 +30,7 @@ function SliceTopicList({slice}) {
             <Holder>
                 <PrismicRichText render={title.richText}/>
                 <h1>{catchphrase.text}</h1>
-                <div>
+                <TopicsHolder>
                     {slice.items.map((loop, i) => (
                         <span key={i} className="item">
                                 <>&nbsp;<GatsbyImage style={{maxHeight: '1rem', maxWidth: '1rem'}}
@@ -32,7 +41,7 @@ function SliceTopicList({slice}) {
                                 </>
                             </span>
                     ))}
-                </div>
+                </TopicsHolder>
                 <Link to="/">
                     <button aria-label="button"><PrismicRichText render={button.richText}/></button>
                 </Link>
