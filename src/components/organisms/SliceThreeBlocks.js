@@ -40,7 +40,7 @@ function SliceThreeBlocks({slice}) {
         block_1_cta,
         block_2_title,
         block_2_description,
-        block_2_cta
+        block_2_cta,
         block_3_title,
         block_3_description,
         block_3_cta
