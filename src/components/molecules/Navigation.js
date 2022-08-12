@@ -32,10 +32,9 @@ const Holder = styled.div`
         text-decoration: none;
       }
 
-      a[aria-current="page"] {
-        border-bottom: 2px solid ${props => props.theme.colours.white};
-      }
-
+      // a[aria-current="page"] {
+        //   border-bottom: 2px solid ${props => props.theme.colours.white};
+      // }
     }
   }
 `
