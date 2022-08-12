@@ -7,7 +7,10 @@ import Container from "../atoms/Container";
 import {GatsbyImage} from "gatsby-plugin-image";
 
 const Grid = styled.div`
-  padding: 10rem 0;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `
 
 const TopicsHolder = styled.div`

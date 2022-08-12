@@ -4,12 +4,12 @@ import styled from "styled-components";
 import {GatsbyImage} from "gatsby-plugin-image";
 
 const Holder = styled.div`
-  background-color: red;
+  background-color: pink;
   color: white;
 `
 
 const Inner = styled.div`
-  padding: 2rem 0;
+  padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   row-gap: 2rem;

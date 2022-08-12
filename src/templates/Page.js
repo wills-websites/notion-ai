@@ -34,8 +34,8 @@ export const pageQuery = graphql`
                     text
                 }
                 body {
-                    ... on PrismicPageDataBodyTwoBlocks { ...TwoBlocks }
-                    ... on PrismicPageDataBodyThreeBlocks { ...ThreeBlocks }
+                    ... on PrismicPageDataBodyResponsiveBlocks { ...ResponsiveBlocks }
+                    ... on PrismicPageDataBodyTwoColumns { ...TwoColumns }
                     ... on PrismicPageDataBodyCta { ...CTA }
                     ... on PrismicPageDataBodyTopicList { ...TopicList }
                 }

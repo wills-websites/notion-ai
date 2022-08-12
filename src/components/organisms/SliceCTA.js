@@ -6,7 +6,10 @@ import PrismicRichText from "../atoms/PrismicRichText";
 import Container from "../atoms/Container";
 
 const Holder = styled.div`
-  padding: 10rem 0;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `
 
 function SliceCTA({slice}) {

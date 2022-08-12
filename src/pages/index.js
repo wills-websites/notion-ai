@@ -9,7 +9,6 @@ const Spacer = styled.div`
   width: 100%;
 `
 
-
 function IndexPage({data}) {
     const {body} = data.prismicPage.data
     return (
@@ -28,8 +27,7 @@ export const homePageQuery = graphql`
         prismicPage(uid: {eq: "home"}) {
             data {
                 body {
-                    ... on PrismicPageDataBodyTwoBlocks { ...TwoBlocks }
-                    ... on PrismicPageDataBodyThreeBlocks { ...ThreeBlocks }
+                    ... on PrismicPageDataBodyResponsiveBlocks { ...ResponsiveBlocks }
                     ... on PrismicPageDataBodyCta { ...CTA }
                     ... on PrismicPageDataBodyTopicList { ...TopicList }
                 }
