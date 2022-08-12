@@ -15,7 +15,7 @@ const Inner = styled.div`
   row-gap: 2rem;
   max-width: ${(props) => props.theme.typography.maxScreen}px;
   margin: 0 auto;
-  height: 500px;
+  height: min-content;
 `
 
 const Clients = styled.div`
