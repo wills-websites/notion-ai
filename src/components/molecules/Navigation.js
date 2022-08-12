@@ -14,6 +14,7 @@ const Holder = styled.div`
     @media ( ${props => props.theme.breakpoints.md} ) {
       border-top: none;
       display: flex;
+      column-gap: 4rem;
       justify-content: flex-end;
       align-items: center;
       color: ${props => props.theme.colours.white};
@@ -23,7 +24,7 @@ const Holder = styled.div`
       ${(props) => props.theme.fluidType(1)};
       margin: 1rem 0;
       @media ( ${props => props.theme.breakpoints.md} ) {
-        margin: 0 1rem;
+        margin: 0;
         ${(props) => props.theme.fluidType(-1)};
       }
 
@@ -32,7 +33,7 @@ const Holder = styled.div`
       }
 
       a[aria-current="page"] {
-        border-bottom: 2px solid ${props => props.theme.colours.yellow};
+        border-bottom: 2px solid ${props => props.theme.colours.white};
       }
 
     }

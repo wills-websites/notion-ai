@@ -55,7 +55,7 @@ function SliceResponsiveBlocks({slice}) {
         <Holder>
             <Container>
                 <Grid>
-                    <PrismicRichText render={heading.richText}/>
+                    {heading.richText && <PrismicRichText render={heading.richText}/>}
                     <Inner>
                         {slice.items.map((item, i) => (
                             <Block key={i}>
