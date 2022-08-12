@@ -22,7 +22,7 @@ const Grid = styled.div`
   }
 
   .logo-holder {
-    background-color: rgba(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.2);
     width: min-content;
     border-radius: 2rem;
     padding: 0.5rem 2rem;

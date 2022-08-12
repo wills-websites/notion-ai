@@ -2,6 +2,14 @@ import React from "react"
 import {graphql} from "gatsby";
 import Seo from "../components/molecules/Seo";
 import SlicePicker from "../components/organisms/SlicePicker";
+import styled from 'styled-components'
+import Container from "../components/atoms/Container";
+import PrismicRichText from "../components/atoms/PrismicRichText";
+
+const Spacer = styled.div`
+  height: 15vh;
+  width: 100%;
+`
 
 function Page({data}) {
     const {title, body} = data.prismicPage.data
@@ -9,6 +17,8 @@ function Page({data}) {
     return (
         <>
             <Seo title={title.text}/>
+            <Spacer/>
+            <Container>{title.richText && <PrismicRichText render={title.richText}/>}</Container>
             {body.map(slice => <SlicePicker key={slice.id} slice={slice}/>)}
         </>
     )
@@ -20,6 +30,7 @@ export const pageQuery = graphql`
             uid
             data {
                 title {
+                    richText
                     text
                 }
                 body {

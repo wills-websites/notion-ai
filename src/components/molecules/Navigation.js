@@ -6,7 +6,7 @@ const Holder = styled.div`
   ul {
     list-style: none;
     margin: 0 0 0 auto;
-    background-color: rgba(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(5px);
     width: min-content;
     border-radius: 2rem;

@@ -29,12 +29,12 @@ const Inner = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  column-gap: 2rem;
+  column-gap: 0.5rem;
 `
 
 function SliceThreeBlocks({slice}) {
     const {
-        title,
+        heading,
         block_1_title,
         block_1_description,
         block_1_cta,
@@ -48,7 +48,7 @@ function SliceThreeBlocks({slice}) {
 
     return (
         <Container>
-            <h1>{title.text}</h1>
+            <PrismicRichText render={heading.richText}/>
             <Inner>
                 <Block>
                     <div>
@@ -98,8 +98,8 @@ export const query = graphql`
     fragment ThreeBlocks on PrismicPageDataBodyThreeBlocks {
         id
         primary {
-            title {
-                text
+            heading {
+                richText
             }
             block_1_title {
                 text

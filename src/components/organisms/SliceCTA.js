@@ -17,7 +17,7 @@ function SliceCTA({slice}) {
     return (
         <Container>
             <Holder>
-                <h1>{text.text}</h1>
+                <PrismicRichText render={text.richText}/>
                 <Link to="/">
                     <button aria-label="button"><PrismicRichText render={button.richText}/></button>
                 </Link>
@@ -37,7 +37,7 @@ export const query = graphql`
         id
         primary {
             text {
-                text
+                richText
             }
             button {
                 richText

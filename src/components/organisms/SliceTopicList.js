@@ -6,17 +6,24 @@ import PrismicRichText from "../atoms/PrismicRichText";
 import Container from "../atoms/Container";
 import {GatsbyImage} from "gatsby-plugin-image";
 
-const Holder = styled.div`
+const Grid = styled.div`
   padding: 10rem 0;
 `
+
 const TopicsHolder = styled.div`
-    .item {
+  margin-top: 2rem;
+
+  .item {
     display: inline-block;
 
     > * {
       vertical-align: -10%;
     }
-}
+  }
+`
+
+const ButtonHolder = styled.div`
+  margin-top: 5rem;
 `
 
 function SliceTopicList({slice}) {
@@ -27,9 +34,9 @@ function SliceTopicList({slice}) {
 
     return (
         <Container>
-            <Holder>
+            <Grid>
                 <PrismicRichText render={title.richText}/>
-                <h1>{catchphrase.text}</h1>
+                <PrismicRichText render={catchphrase.richText}/>
                 <TopicsHolder>
                     {slice.items.map((loop, i) => (
                         <span key={i} className="item">
@@ -42,10 +49,12 @@ function SliceTopicList({slice}) {
                             </span>
                     ))}
                 </TopicsHolder>
-                <Link to="/">
-                    <button aria-label="button"><PrismicRichText render={button.richText}/></button>
-                </Link>
-            </Holder>
+                <ButtonHolder>
+                    <Link to="/">
+                        <button aria-label="button"><PrismicRichText render={button.richText}/></button>
+                    </Link>
+                </ButtonHolder>
+            </Grid>
         </Container>
     )
 }
@@ -64,7 +73,7 @@ export const query = graphql`
                 richText
             }
             catchphrase {
-                text
+                richText
             }
             button {
                 richText
