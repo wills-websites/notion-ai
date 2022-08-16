@@ -1,25 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 // import '../utils/fontface.css';
-
-import Header from "../components/molecules/Header";
-import Footer from "../components/molecules/Footer";
-import Transition from "../components/atoms/Transition";
-
 import GlobalStyles from "../components/atoms/GlobalStyles";
 import {ThemeProvider} from "styled-components";
 import {theme} from "../utils/styling";
+import ColourSchemes from "../components/organisms/ColourSchemes";
+import Transition from "../components/atoms/Transition";
 
 function Index({location, children}) {
     return (
         <ThemeProvider theme={theme}>
             <>
                 <GlobalStyles/>
-                <Header/>
-                <Transition location={location}>
-                    <main>{children}</main>
-                </Transition>
-                <Footer/>
+                <ColourSchemes path={location.pathname}>
+                    <Transition location={location}>
+                        <main>{children}</main>
+                    </Transition>
+                </ColourSchemes>
             </>
         </ThemeProvider>
     );
@@ -27,6 +24,7 @@ function Index({location, children}) {
 
 Index.propTypes = {
     children: PropTypes.node.isRequired,
+    location: PropTypes.object.isRequired,
 };
 
 export default Index;

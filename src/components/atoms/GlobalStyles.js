@@ -295,10 +295,22 @@ const GlobalStyle = createGlobalStyle`
       text-decoration: none;
     }
 
-    &.fill {
+    &.light {
       border: none;
-      color: white;
-      background-color: green;
+      color: ${props => props.theme.colours.black};
+      background-color: ${props => props.theme.colours.white};
+    }
+
+    &.neutral {
+      border: none;
+      color: ${props => props.theme.colours.black};
+      background-color: ${props => props.theme.colours.lightgrey};
+    }
+
+    &.dark {
+      border: none;
+      color: ${props => props.theme.colours.white};
+      background-color: ${props => props.theme.colours.black};
     }
 
     &.link {
@@ -317,6 +329,27 @@ const GlobalStyle = createGlobalStyle`
         width: auto;
         display: block;
       }
+    }
+  }
+
+  .monochrome {
+    background-color: ${props => props.theme.colours.lightgrey};
+
+    button, .button {
+      border: none;
+      color: ${props => props.theme.colours.black};
+      background-color: ${props => props.theme.colours.white};
+    }
+  }
+
+  .colourful {
+    background-color: ${props => props.theme.colours.indigo};
+    color: ${props => props.theme.colours.white};
+
+    button, .button {
+      border: none;
+      color: ${props => props.theme.colours.white};
+      background-color: ${props => props.theme.colours.black};
     }
   }
 

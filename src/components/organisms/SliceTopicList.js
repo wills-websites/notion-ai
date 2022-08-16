@@ -13,14 +13,24 @@ const Grid = styled.div`
   justify-content: center;
 `
 
+const Circle = styled.div`
+  display: inline-block;
+  background: ${props => props.theme.colours.indigo};
+  height: 1rem;
+  width: 1rem;
+  border-radius: 1rem;
+`
+
 const TopicsHolder = styled.div`
   margin-top: 2rem;
 
   .item {
     display: inline-block;
+    margin-right: 1rem;
 
     > * {
       vertical-align: -10%;
+      margin-right: 0.5rem;
     }
   }
 `
@@ -43,10 +53,12 @@ function SliceTopicList({slice}) {
                 <TopicsHolder>
                     {slice.items.map((loop, i) => (
                         <span key={i} className="item">
-                                <>&nbsp;<GatsbyImage style={{maxHeight: '1rem', maxWidth: '1rem'}}
-                                                     imgStyle={{objectFit: 'contain'}}
-                                                     image={loop.image.gatsbyImageData}
-                                                     alt="Logo"/>&nbsp;
+                                <>
+                                    <Circle/>
+                                    <GatsbyImage style={{maxHeight: '1rem', maxWidth: '1rem'}}
+                                                 imgStyle={{objectFit: 'contain'}}
+                                                 image={loop.image.gatsbyImageData}
+                                                 alt="Logo"/>
                                     {loop.topic.text}
                                 </>
                             </span>
@@ -54,7 +66,9 @@ function SliceTopicList({slice}) {
                 </TopicsHolder>
                 <ButtonHolder>
                     <Link to="/">
-                        <button aria-label="button"><PrismicRichText render={button.richText}/></button>
+                        <button className="button neutral" aria-label="button"><PrismicRichText
+                            render={button.richText}/>
+                        </button>
                     </Link>
                 </ButtonHolder>
             </Grid>

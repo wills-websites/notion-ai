@@ -10,7 +10,6 @@ const Holder = styled.div`
 
 const Grid = styled.div`
   display: flex;
-  height: 85vh;
   flex-direction: column;
   justify-content: flex-end;
 
@@ -21,7 +20,7 @@ const Grid = styled.div`
 
 const Inner = styled.div`
   display: flex;
-  height: inherit;
+  height: 60vh;
   justify-content: center;
   align-items: center;
   column-gap: 0.5rem;
@@ -36,7 +35,6 @@ const Block = styled.div`
   flex-direction: column;
   justify-content: space-between;
   border-radius: 1rem;
-  background-color: pink;
   padding: 2rem;
 
   > :first-child {
@@ -58,13 +56,13 @@ function SliceResponsiveBlocks({slice}) {
                     {heading.richText && <PrismicRichText render={heading.richText}/>}
                     <Inner>
                         {slice.items.map((item, i) => (
-                            <Block key={i}>
+                            <Block className={item.theme} key={i}>
                                 <div>
                                     <h4>{item.block_title.text}</h4>
                                     <PrismicRichText render={item.block_description.richText}/>
                                 </div>
                                 <Link to="/">
-                                    <button aria-label="button" className="button fill"><PrismicRichText
+                                    <button aria-label="button" className="button"><PrismicRichText
                                         render={item.block_cta.richText}/>
                                     </button>
                                 </Link>
@@ -91,6 +89,7 @@ export const query = graphql`
             }
         }
         items {
+            theme
             block_title {
                 text
             }
