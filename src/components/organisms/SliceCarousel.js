@@ -24,7 +24,7 @@ const Group = styled.div`
 
 const SlideHolder = styled.div`
   background-color: ${props => props.theme.colours.lightgrey};
-  border-radius: 2rem;
+  border-radius: 1rem;
   height: inherit;
   width: 100%;
   display: flex;
