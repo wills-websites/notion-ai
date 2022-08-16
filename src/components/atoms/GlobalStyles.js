@@ -287,6 +287,7 @@ const GlobalStyle = createGlobalStyle`
     color: inherit;
     background-color: transparent;
     cursor: pointer;
+    width: min-content;
 
     p {
       margin: 0.25rem;
@@ -311,7 +312,13 @@ const GlobalStyle = createGlobalStyle`
     &.dark {
       border: none;
       color: ${props => props.theme.colours.white};
-      background-color: ${props => props.theme.colours.black};
+      background-color: ${props => props.theme.colours.darkgrey};
+    }
+
+    &.indigo {
+      border: none;
+      color: ${props => props.theme.colours.white};
+      background-color: ${props => props.theme.colours.indigo};
     }
 
     &.link {

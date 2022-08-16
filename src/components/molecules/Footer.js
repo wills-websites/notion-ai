@@ -4,8 +4,8 @@ import styled from "styled-components";
 import {GatsbyImage} from "gatsby-plugin-image";
 
 const Holder = styled.div`
-  background-color: pink;
-  color: white;
+  background-color: ${props => props.theme.colours.black};
+  color: ${props => props.theme.colours.white};
 `
 
 const Inner = styled.div`
@@ -84,17 +84,17 @@ function Footer() {
                 </Clients>
                 <ContentHolder>
                     <ButtonHolder>
-                        <button className="button fill">NotionAi</button>
-                        <button className="button fill">Start your free trial today</button>
+                        <button className="button dark">NotionAi</button>
+                        <button className="button indigo">Start your free trial today</button>
                     </ButtonHolder>
                     <div><p>Location</p>
                         <p>Bay 7, Sydney Harbour Bridge Warehouses,<br/> Middlemiss Street, Lavender Bay NSW
                             2060<br/>
                             Australia</p>
                         <ButtonHolder>
-                            <button className="button fill">Email</button>
-                            <button className="button fill">LinkedIn</button>
-                            <button className="button fill">Instagram</button>
+                            <button className="button dark">Email</button>
+                            <button className="button dark">LinkedIn</button>
+                            <button className="button dark">Instagram</button>
                         </ButtonHolder>
                     </div>
                 </ContentHolder>
