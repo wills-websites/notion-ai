@@ -36,36 +36,36 @@ const Block = styled.div`
   justify-content: space-between;
   border-radius: 1rem;
   padding: 2rem;
+}
 
-  > :first-child {
-    margin-top: 0;
-  }
+> :first-child {
+  margin-top: 0;
+}
 
-  > :last-child {
-    margin-bottom: 0;
-  }
+> :last-child {
+  margin-bottom: 0;
+}
 `;
 
 function SliceResponsiveBlocks({slice}) {
     const {heading} = slice.primary;
 
     return (
-        <Holder>
+        <Holder className={slice.primary.theme === true ? 'dark-theme' : ''}>
             <Container>
                 <Grid>
                     {heading.richText && <PrismicRichText render={heading.richText}/>}
                     <Inner>
                         {slice.items.map((item, i) => (
-                            <Block className={item.theme} key={i}>
+                            <Block className={slice.primary.theme === false ? item.theme : 'dark-block'} key={i}>
                                 <div>
                                     <h4>{item.block_title.text}</h4>
                                     <PrismicRichText render={item.block_description.richText}/>
                                 </div>
-                                <Link to="/">
-                                    <button aria-label="button" className="button"><PrismicRichText
-                                        render={item.block_cta.richText}/>
-                                    </button>
-                                </Link>
+                                {item.block_cta.text &&
+                                    <Link to="/">
+                                        <button aria-label="button" className="button">{item.block_cta.text}</button>
+                                    </Link>}
                             </Block>))}
                     </Inner>
                 </Grid>
@@ -84,6 +84,7 @@ export const query = graphql`
     fragment ResponsiveBlocks on PrismicPageDataBodyResponsiveBlocks {
         id
         primary {
+            theme
             heading {
                 richText
             }
@@ -97,7 +98,7 @@ export const query = graphql`
                 richText
             }
             block_cta {
-                richText
+                text
             }
             block_image {
                 gatsbyImageData

@@ -5,6 +5,10 @@ import {graphql} from "gatsby";
 import PrismicRichText from "../atoms/PrismicRichText";
 import Container from "../atoms/Container";
 
+const Holder = styled.div`
+  background-color: ${props => props.theme.colours.lightgrey};
+`
+
 const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -21,22 +25,24 @@ function SliceTwoColumns({slice}) {
     const {heading} = slice.primary;
 
     return (
-        <Container>
-            <Grid>
-                <PrismicRichText render={heading.richText}/>
-                <div>
-                    {slice.items.map((item, i) => (
-                        <Group key={i}>
-                            <p><b>{item.number}</b></p>
-                            <div>
-                                <b><PrismicRichText render={item.subheading.richText}/></b>
-                                <PrismicRichText render={item.description.richText}/>
-                            </div>
-                        </Group>
-                    ))}
-                </div>
-            </Grid>
-        </Container>
+        <Holder>
+            <Container>
+                <Grid>
+                    <PrismicRichText render={heading.richText}/>
+                    <div>
+                        {slice.items.map((item, i) => (
+                            <Group key={i}>
+                                <p><b>{item.number}</b></p>
+                                <div>
+                                    <b><PrismicRichText render={item.subheading.richText}/></b>
+                                    <PrismicRichText render={item.description.richText}/>
+                                </div>
+                            </Group>
+                        ))}
+                    </div>
+                </Grid>
+            </Container>
+        </Holder>
     )
 }
 

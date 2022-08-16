@@ -38,6 +38,7 @@ export const pageQuery = graphql`
                     ... on PrismicPageDataBodyTwoColumns { ...TwoColumns }
                     ... on PrismicPageDataBodyCta { ...CTA }
                     ... on PrismicPageDataBodyTopicList { ...TopicList }
+                    ... on PrismicPageDataBodyGraphicBlock { ...GraphicBlock }
                 }
             }
         }

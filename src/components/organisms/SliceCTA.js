@@ -22,7 +22,8 @@ function SliceCTA({slice}) {
             <Holder>
                 <PrismicRichText render={text.richText}/>
                 <Link to="/">
-                    <button aria-label="button"><PrismicRichText render={button.richText}/></button>
+                    <button className="button neutral" aria-label="button"><PrismicRichText render={button.richText}/>
+                    </button>
                 </Link>
             </Holder>
         </Container>

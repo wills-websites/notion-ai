@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     // Use system fonts: https://css-tricks.com/snippets/css/system-font-stack/
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: GraphikType, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     color: ${(props) => props.theme.colours.black};
     background-color: ${(props) => props.theme.colours.white};
   }
@@ -36,7 +36,7 @@ const GlobalStyle = createGlobalStyle`
 
   h1, h2, h3, h4, h5, h6,
   .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-weight: bold;
+    font-weight: normal;
 
     a {
       text-decoration: none;
@@ -350,6 +350,21 @@ const GlobalStyle = createGlobalStyle`
       border: none;
       color: ${props => props.theme.colours.white};
       background-color: ${props => props.theme.colours.black};
+    }
+  }
+
+  .dark-theme {
+    background-color: ${props => props.theme.colours.black};
+    color: ${props => props.theme.colours.white};
+
+    .dark-block {
+      background-color: ${props => props.theme.colours.white};
+      color: ${props => props.theme.colours.black};
+
+      > div :first-child {
+        color: ${props => props.theme.colours.indigo};
+
+      }
     }
   }
 

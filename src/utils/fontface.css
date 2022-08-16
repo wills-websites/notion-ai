@@ -1,17 +1,52 @@
 /*Comment out import statement in layouts/index.js to use custom font within global styles.*/
 
-/*@font-face {*/
-/*    font-family: "Universal Sans";*/
-/*    font-weight: normal;*/
-/*    src: url('../assets/fonts/UniversalSans-500.woff') format("woff"),*/
-/*    url('../assets/fonts/UniversalSans-500.ttf') format("ttf");*/
-/*    font-display: block;*/
-/*}*/
+@font-face {
+    font-family: "GraphikType";
+    font-weight: normal;
+    src: url('../assets/fonts/Graphik/Graphik-Regular.otf') format("otf");
+    font-display: block;
+}
 
-/*@font-face {*/
-/*    font-family: "Universal Sans";*/
-/*    font-weight: bold;*/
-/*    src: url('../assets/fonts/UniversalSans-680.woff') format("woff"),*/
-/*    url('../assets/fonts/UniversalSans-680.ttf') format("ttf");*/
-/*    font-display: block;*/
-/*}*/
+@font-face {
+    font-family: "GraphikType";
+    font-weight: bold;
+    src: url('../assets/fonts/Graphik/Graphik-Bold.otf') format("otf");
+    font-display: block;
+}
+
+@font-face {
+    font-family: "GraphikType";
+    font-weight: 300;
+    src: url('../assets/fonts/Graphik/Graphik-Light.otf') format("otf");
+    font-display: block;
+}
+
+@font-face {
+    font-family: "GraphikType";
+    font-weight: 500;
+    src: url('../assets/fonts/Graphik/Graphik-Medium.otf') format("otf");
+    font-display: block;
+}
+
+@font-face {
+    font-family: "GraphikType";
+    font-weight: 200;
+    src: url('../assets/fonts/Graphik/Graphik-ExtraLight.otf') format("otf");
+    font-display: block;
+}
+
+@font-face {
+    font-family: "GraphikType";
+    font-weight: normal;
+    font-style: italic;
+    src: url('../assets/fonts/Graphik/Graphik-RegularItalic.otf') format("otf");
+    font-display: block;
+}
+
+@font-face {
+    font-family: "GraphikType";
+    font-weight: bold;
+    font-style: italic;
+    src: url('../assets/fonts/Graphik/Graphik-BoldItalic.otf') format("otf");
+    font-display: block;
+}

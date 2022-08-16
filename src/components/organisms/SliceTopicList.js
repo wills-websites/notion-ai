@@ -11,6 +11,10 @@ const Grid = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  > :first-child {
+    color: ${props => props.theme.colours.grey};
+  }
 `
 
 const Circle = styled.div`
