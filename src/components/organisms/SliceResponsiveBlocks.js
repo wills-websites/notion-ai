@@ -14,7 +14,7 @@ const Grid = styled.div`
   justify-content: flex-end;
 
   > :first-child {
-    margin-top: 0;
+    margin-top: 6rem;
   }
 `
 

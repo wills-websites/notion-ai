@@ -39,6 +39,7 @@ export const pageQuery = graphql`
                     ... on PrismicPageDataBodyCta { ...CTA }
                     ... on PrismicPageDataBodyTopicList { ...TopicList }
                     ... on PrismicPageDataBodyGraphicBlock { ...GraphicBlock }
+                    ... on PrismicPageDataBodyBlockCarousel { ...BlockCarousel }
                 }
             }
         }

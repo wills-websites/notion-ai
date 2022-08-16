@@ -1,4 +1,5 @@
 import {createGlobalStyle} from "styled-components"
+import '@splidejs/react-splide/css';
 
 const GlobalStyle = createGlobalStyle`
   html {

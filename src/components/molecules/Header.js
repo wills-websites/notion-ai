@@ -5,9 +5,12 @@ import {Link} from "gatsby";
 import PropTypes from 'prop-types';
 import classNames from "classnames";
 import Container from "../atoms/Container";
-import HeaderScrollTransition from "../atoms/HeaderScrollTransition";
+// import HeaderScrollTransition from "../atoms/HeaderScrollTransition";
 
 const Holder = styled.div`
+  width: 100%;
+  position: fixed;
+  z-index: 400;
 `;
 
 const Grid = styled.div`
@@ -22,7 +25,7 @@ const Grid = styled.div`
   }
 
   .logo-holder {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(80, 80, 80, 0.2);
     width: min-content;
     border-radius: 2rem;
     padding: 0.5rem 2rem;
@@ -49,7 +52,7 @@ const Grid = styled.div`
       }
 
       path, rect {
-        fill: ${props => props.navOpen ? props.theme.colours.black4 : props.theme.colours.white};
+        fill: ${props => props.navOpen ? props.theme.colours.black : props.theme.colours.white};
       }
     }
   }
@@ -72,20 +75,18 @@ function Header() {
     });
     return (
         <Holder>
-            <HeaderScrollTransition>
-                <Container>
-                    <Grid className={gridClasses} navOpen={navOpen}>
-                        <div className="logo-holder">
-                            <Link to="/">
-                                <p>NotionAi</p>
-                            </Link>
-                        </div>
-                        <LargeNavHolder>
-                            <Navigation/>
-                        </LargeNavHolder>
-                    </Grid>
-                </Container>
-            </HeaderScrollTransition>
+            <Container>
+                <Grid className={gridClasses} navOpen={navOpen}>
+                    <div className="logo-holder">
+                        <Link to="/">
+                            <p>NotionAi</p>
+                        </Link>
+                    </div>
+                    <LargeNavHolder>
+                        <Navigation/>
+                    </LargeNavHolder>
+                </Grid>
+            </Container>
         </Holder>
     );
 }

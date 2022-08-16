@@ -6,15 +6,13 @@ const Holder = styled.div`
   ul {
     list-style: none;
     margin: 0 0 0 auto;
-    background-color: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(5px);
+    background-color: rgba(80, 80, 80, 0.2);
+    backdrop-filter: blur(8px);
     width: min-content;
     border-radius: 2rem;
-    padding: 0.5rem 2rem;
+    padding: 0;
     @media ( ${props => props.theme.breakpoints.md} ) {
-      border-top: none;
       display: flex;
-      column-gap: 4rem;
       justify-content: flex-end;
       align-items: center;
       color: ${props => props.theme.colours.white};
@@ -23,9 +21,15 @@ const Holder = styled.div`
     li {
       ${(props) => props.theme.fluidType(1)};
       margin: 1rem 0;
+      border-radius: 1rem;
       @media ( ${props => props.theme.breakpoints.md} ) {
         margin: 0;
+        padding: 0.5rem 2rem;
         ${(props) => props.theme.fluidType(-1)};
+      }
+
+      &:hover {
+        background-color: ${props => props.theme.colours.grey};
       }
 
       a {
@@ -33,9 +37,38 @@ const Holder = styled.div`
       }
 
       // a[aria-current="page"] {
-        //   border-bottom: 2px solid ${props => props.theme.colours.white};
+        //   color: ${props => props.theme.colours.indigo};
       // }
     }
+  }
+`
+
+const Dropdown = styled.div`
+  li {
+    cursor: pointer;
+  }
+
+  .content {
+    display: none;
+    position: absolute;
+    z-index: 200;
+
+    li {
+      width: 100%;
+      display: block;
+      margin: 0.5rem 0;
+      text-align: center;
+      ${(props) => props.theme.fluidType(-1)};
+      background-color: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(8px);
+      border-radius: 2rem;
+      padding: 0.5rem 2rem;
+      color: ${props => props.theme.colours.white};
+    }
+  }
+
+  &:hover .content {
+    display: block;
   }
 `
 
@@ -45,9 +78,16 @@ class Navigation extends Component {
             <nav className="Navigation">
                 <Holder>
                     <ul>
-                        <li><Link to="/">Products</Link></li>
+                        <Dropdown>
+                            <li>Products</li>
+                            <div className="content">
+                                <li><Link to="/air/">AiR</Link></li>
+                                <li><Link to="/stream/">Stream</Link></li>
+                                <li><Link to="/enterprise/">Enterprise</Link></li>
+                            </div>
+                        </Dropdown>
                         <li><Link to="/plans/">Plans</Link></li>
-                        <li><Link to="/">Articles</Link></li>
+                        <li><Link to="/articles">Articles</Link></li>
                         <li><Link to="/about/">About</Link></li>
                     </ul>
                 </Holder>
