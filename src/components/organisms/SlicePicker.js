@@ -10,18 +10,18 @@ import SlicePlanType from "./SlicePlanType";
 import SliceFlipCarousel from "./SliceFlipCarousel";
 import SliceFAQ from "./SliceFAQ";
 
-function SlicePicker({slice, pageTitle}) {
+function SlicePicker({slice}) {
     return (
         <>
-            {slice.slice_type === 'responsive_blocks' && <SliceResponsiveBlocks slice={slice} pageTitle={pageTitle}/>}
-            {slice.slice_type === 'cta' && <SliceCTA slice={slice} pageTitle={pageTitle}/>}
-            {slice.slice_type === 'topic_list' && <SliceTopicList slice={slice} pageTitle={pageTitle}/>}
-            {slice.slice_type === 'two_columns' && <SliceTwoColumns slice={slice} pageTitle={pageTitle}/>}
-            {slice.slice_type === 'graphic_block' && <SliceGraphicBlock slice={slice} pageTitle={pageTitle}/>}
-            {slice.slice_type === 'block_carousel' && <SliceCarousel slice={slice} pageTitle={pageTitle}/>}
-            {slice.slice_type === 'plan_type' && <SlicePlanType slice={slice} pageTitle={pageTitle}/>}
-            {slice.slice_type === 'business_carousel' && <SliceFlipCarousel slice={slice} pageTitle={pageTitle}/>}
-            {slice.slice_type === 'faq' && <SliceFAQ slice={slice} pageTitle={pageTitle}/>}
+            {slice.slice_type === 'responsive_blocks' && <SliceResponsiveBlocks slice={slice}/>}
+            {slice.slice_type === 'cta' && <SliceCTA slice={slice}/>}
+            {slice.slice_type === 'topic_list' && <SliceTopicList slice={slice}/>}
+            {slice.slice_type === 'two_columns' && <SliceTwoColumns slice={slice}/>}
+            {slice.slice_type === 'graphic_block' && <SliceGraphicBlock slice={slice}/>}
+            {slice.slice_type === 'block_carousel' && <SliceCarousel slice={slice}/>}
+            {slice.slice_type === 'plan_type' && <SlicePlanType slice={slice}/>}
+            {slice.slice_type === 'business_carousel' && <SliceFlipCarousel slice={slice}/>}
+            {slice.slice_type === 'faq' && <SliceFAQ slice={slice}/>}
         </>
     )
 }

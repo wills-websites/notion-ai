@@ -16,8 +16,9 @@ const Spacer = styled.div`
   height: 15vh;
   width: 100%;
 `
-const AboutPage = ({slice, pageTitle, data}) => {
-    const {title, heading, description, team, team_heading} = data.prismicAbout.data
+
+const AboutPage = ({data}) => {
+    const {title, heading, description, team, team_heading, body} = data.prismicAbout.data
     return (
         <Holder>
             <Seo title={title.text}/>
@@ -26,6 +27,8 @@ const AboutPage = ({slice, pageTitle, data}) => {
                 <PrismicRichText render={heading.richText}/>
                 <OffsetTwoColumn mappedItem={description}/>
                 <TeamMembers mappedItem={team} team_heading={team_heading}/>
+                {/*<SliceAboutCTA slice={body.slice}/>*/}
+                {/*<SliceAboutCarousel slice={body.slice}/>*/}
             </Container>
         </Holder>
     );
