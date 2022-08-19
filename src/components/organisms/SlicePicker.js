@@ -7,6 +7,8 @@ import SliceTwoColumns from "./SliceTwoColumns";
 import SliceGraphicBlock from "./SliceGraphicBlock";
 import SliceCarousel from "./SliceCarousel";
 import SlicePlanType from "./SlicePlanType";
+import SliceFlipCarousel from "./SliceFlipCarousel";
+import SliceFAQ from "./SliceFAQ";
 
 function SlicePicker({slice, pageTitle}) {
     return (
@@ -18,6 +20,8 @@ function SlicePicker({slice, pageTitle}) {
             {slice.slice_type === 'graphic_block' && <SliceGraphicBlock slice={slice} pageTitle={pageTitle}/>}
             {slice.slice_type === 'block_carousel' && <SliceCarousel slice={slice} pageTitle={pageTitle}/>}
             {slice.slice_type === 'plan_type' && <SlicePlanType slice={slice} pageTitle={pageTitle}/>}
+            {slice.slice_type === 'business_carousel' && <SliceFlipCarousel slice={slice} pageTitle={pageTitle}/>}
+            {slice.slice_type === 'faq' && <SliceFAQ slice={slice} pageTitle={pageTitle}/>}
         </>
     )
 }

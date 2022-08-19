@@ -6,6 +6,9 @@ import PrismicRichText from "../atoms/PrismicRichText";
 import Container from "../atoms/Container";
 
 const Holder = styled.div`
+`
+
+const Inner = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,7 +21,7 @@ const Holder = styled.div`
 const Block = styled.div`
   width: 100%;
   height: 60vh;
-  background-color: ${props => props.theme.colours.lightgrey};
+  background-color: rgba(150, 150, 150, 0.25);
   display: flex;
   padding: 2rem;
   border-radius: 1rem;
@@ -39,31 +42,33 @@ const Price = styled.div`
 
 function SlicePlanType({slice}) {
     const {
-        heading
+        heading, theme1
     } = slice.primary;
 
     return (
-        <Container>
-            <Holder>
-                <PrismicRichText render={heading.richText}/>
-                {slice.items.map((item, i) => (
-                    <Block key={i}>
-                        <Group>
-                            <div>
-                                <PrismicRichText render={item.subheading.richText}/>
-                                <PrismicRichText render={item.catchline.richText}/>
-                            </div>
-                            <button rel="noreferrer" className="button light"><PrismicRichText
-                                render={item.cta.richText}/></button>
-                        </Group>
-                        <Group>
-                            <PrismicRichText render={item.content.richText}/>
-                            <Price><h2>USD {item.price}</h2><p>/ monthly</p></Price>
-                        </Group>
-                    </Block>
-                ))}
-            </Holder>
-        </Container>
+        <Holder className={theme1 === true ? 'dark-theme' : ''}>
+            <Container>
+                <Inner>
+                    <PrismicRichText render={heading.richText}/>
+                    {slice.items.map((item, i) => (
+                        <Block key={i}>
+                            <Group>
+                                <div>
+                                    <PrismicRichText render={item.subheading.richText}/>
+                                    <PrismicRichText render={item.catchline.richText}/>
+                                </div>
+                                <button rel="noreferrer" className="button light"><PrismicRichText
+                                    render={item.cta.richText}/></button>
+                            </Group>
+                            <Group>
+                                <PrismicRichText render={item.content.richText}/>
+                                <Price><h2>USD {item.price}</h2><p>/ monthly</p></Price>
+                            </Group>
+                        </Block>
+                    ))}
+                </Inner>
+            </Container>
+        </Holder>
     )
 }
 
@@ -77,6 +82,7 @@ export const query = graphql`
     fragment PlanType on PrismicPageDataBodyPlanType {
         id
         primary {
+            theme1
             heading {
                 richText
             }
