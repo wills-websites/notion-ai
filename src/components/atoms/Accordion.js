@@ -5,11 +5,10 @@ import Arrow from '../../assets/svg/arrow.inline.svg';
 import {animateScroll as scroll} from 'react-scroll/modules';
 
 const Holder = styled.div`
-  border-bottom: 1px solid;
-
-  &:first-child {
-    border-top: 1px solid;
-  }
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  background-color: rgba(150, 150, 150, 0.25);
 
   button {
     color: ${props => props.theme.colours.black};
