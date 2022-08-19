@@ -6,7 +6,7 @@ const Holder = styled.div`
   ul {
     list-style: none;
     margin: 0 0 0 auto;
-    background-color: rgba(150, 150, 150, 0.25);
+    background-color: ${props => props.theme.colours.lightgrey};
     backdrop-filter: blur(8px);
     width: min-content;
     border-radius: 2rem;
@@ -81,24 +81,24 @@ class Navigation extends Component {
                         <Dropdown>
                             <li>Products</li>
                             <div className="content">
-                                <Link to="/air/">
+                                <Link to="/air">
                                     <li>AiR</li>
                                 </Link>
-                                <Link to="/stream/">
+                                <Link to="/stream">
                                     <li>Stream</li>
                                 </Link>
-                                <Link to="/enterprise/">
+                                <Link to="/enterprise">
                                     <li>Enterprise</li>
                                 </Link>
                             </div>
                         </Dropdown>
-                        <Link to="/plans/">
+                        <Link to="/plans">
                             <li>Plans</li>
                         </Link>
                         <Link to="/articles">
                             <li>Articles</li>
                         </Link>
-                        <Link to="/about/">
+                        <Link to="/about">
                             <li>About</li>
                         </Link>
                     </ul>

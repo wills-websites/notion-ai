@@ -3,7 +3,7 @@ export const theme = {
         black: "#000000",
         darkgrey: "#404040",
         grey: "#ADADAD",
-        lightgrey: "#EDEDED",
+        lightgrey: "rgba(150, 150, 150, 0.25)",
         white: "#FFFFFF",
         indigo: "#6026F5",
         // Accessibility and forms

@@ -25,7 +25,7 @@ const Grid = styled.div`
   }
 
   .logo-holder {
-    background-color: rgba(150, 150, 150, 0.25);
+    background-color: ${props => props.theme.colours.lightgrey};
     width: min-content;
     border-radius: 2rem;
     padding: 0.5rem 2rem;
