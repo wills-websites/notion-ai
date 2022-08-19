@@ -18,6 +18,14 @@ const Holder = styled.div`
       color: ${props => props.theme.colours.white};
     }
 
+    a {
+      text-decoration: none;
+    }
+
+    // a[aria-current="page"] {
+      //   color: ${props => props.theme.colours.indigo};
+    // }
+
     li {
       ${(props) => props.theme.fluidType(1)};
       margin: 1rem 0;
@@ -31,14 +39,6 @@ const Holder = styled.div`
       &:hover {
         background-color: ${props => props.theme.colours.grey};
       }
-
-      a {
-        text-decoration: none;
-      }
-
-      // a[aria-current="page"] {
-        //   color: ${props => props.theme.colours.indigo};
-      // }
     }
   }
 `
@@ -81,14 +81,26 @@ class Navigation extends Component {
                         <Dropdown>
                             <li>Products</li>
                             <div className="content">
-                                <li><Link to="/air/">AiR</Link></li>
-                                <li><Link to="/stream/">Stream</Link></li>
-                                <li><Link to="/enterprise/">Enterprise</Link></li>
+                                <Link to="/air/">
+                                    <li>AiR</li>
+                                </Link>
+                                <Link to="/stream/">
+                                    <li>Stream</li>
+                                </Link>
+                                <Link to="/enterprise/">
+                                    <li>Enterprise</li>
+                                </Link>
                             </div>
                         </Dropdown>
-                        <li><Link to="/plans/">Plans</Link></li>
-                        <li><Link to="/articles">Articles</Link></li>
-                        <li><Link to="/about/">About</Link></li>
+                        <Link to="/plans/">
+                            <li>Plans</li>
+                        </Link>
+                        <Link to="/articles">
+                            <li>Articles</li>
+                        </Link>
+                        <Link to="/about/">
+                            <li>About</li>
+                        </Link>
                     </ul>
                 </Holder>
             </nav>
