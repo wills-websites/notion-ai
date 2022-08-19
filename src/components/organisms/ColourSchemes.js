@@ -7,12 +7,12 @@ import Footer from '../molecules/Footer';
 
 const schemes = {
     dark: {
-        background: theme.colours.black,
-        text: theme.colours.black
+        bgColour: theme.colours.black,
+        textColour: theme.colours.white,
     },
     light: {
-        background: theme.colours.black,
-        text: theme.colours.black
+        bgColour: theme.colours.white,
+        textColour: theme.colours.black,
     }
 };
 

@@ -12,10 +12,6 @@ const Grid = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-
-  > :first-child {
-    margin-top: 6rem;
-  }
 `
 
 const Inner = styled.div`
@@ -57,7 +53,7 @@ function SliceResponsiveBlocks({slice}) {
                     {heading.richText && <PrismicRichText render={heading.richText}/>}
                     <Inner>
                         {slice.items.map((item, i) => (
-                            <Block className={slice.primary.theme === false ? item.theme : 'dark-block'} key={i}>
+                            <Block className={item.theme} key={i}>
                                 <div>
                                     <h4>{item.block_title.text}</h4>
                                     <PrismicRichText render={item.block_description.richText}/>

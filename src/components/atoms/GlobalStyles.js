@@ -340,8 +340,8 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  .monochrome {
-    background-color: ${props => props.theme.colours.lightgrey};
+  .transparent {
+    background-color: rgba(150, 150, 150, 0.25);
 
     button, .button {
       border: none;
@@ -350,8 +350,36 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  .colourful {
+  .indigo {
     background-color: ${props => props.theme.colours.indigo};
+    color: ${props => props.theme.colours.white};
+
+    button, .button {
+      border: none;
+      color: ${props => props.theme.colours.white};
+      background-color: ${props => props.theme.colours.black};
+    }
+  }
+
+  .white {
+    background-color: ${props => props.theme.colours.white};
+    color: ${props => props.theme.colours.black};
+
+    > div :first-child {
+      color: ${props => props.theme.colours.indigo};
+    }
+  }
+
+  button, .button {
+    border: none;
+    color: ${props => props.theme.colours.white};
+    background-color: ${props => props.theme.colours.black};
+  }
+
+  }
+
+  .black {
+    background-color: ${props => props.theme.colours.black};
     color: ${props => props.theme.colours.white};
 
     button, .button {
@@ -364,16 +392,6 @@ const GlobalStyle = createGlobalStyle`
   .dark-theme {
     background-color: ${props => props.theme.colours.black};
     color: ${props => props.theme.colours.white};
-
-    .dark-block {
-      background-color: ${props => props.theme.colours.white};
-      color: ${props => props.theme.colours.black};
-
-      > div :first-child {
-        color: ${props => props.theme.colours.indigo};
-
-      }
-    }
   }
 
   .errorMsg {

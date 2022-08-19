@@ -6,21 +6,23 @@ import styled from 'styled-components'
 import Container from "../components/atoms/Container";
 import PrismicRichText from "../components/atoms/PrismicRichText";
 
+const Holder = styled.div`
+`
+
 const Spacer = styled.div`
   height: 15vh;
   width: 100%;
 `
 
 function Page({data}) {
-    const {title, body} = data.prismicPage.data
+    const {title, theme, body} = data.prismicPage.data
 
     return (
-        <>
+        <Holder className={theme === true ? 'dark-theme' : ''}>
             <Seo title={title.text}/>
             <Spacer/>
-            <Container>{title.richText && <PrismicRichText render={title.richText}/>}</Container>
             {body.map(slice => <SlicePicker key={slice.id} slice={slice}/>)}
-        </>
+        </Holder>
     )
 };
 
@@ -33,6 +35,7 @@ export const pageQuery = graphql`
                     richText
                     text
                 }
+                theme
                 body {
                     ... on PrismicPageDataBodyResponsiveBlocks { ...ResponsiveBlocks }
                     ... on PrismicPageDataBodyTwoColumns { ...TwoColumns }

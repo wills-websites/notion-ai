@@ -23,14 +23,17 @@ const Group = styled.div`
 `
 
 const SlideHolder = styled.div`
-  background-color: ${props => props.theme.colours.lightgrey};
   border-radius: 1rem;
   height: inherit;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   padding: 2rem;
+
+  > div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 `
 
 function SliceCarousel({slice}) {
@@ -58,9 +61,11 @@ function SliceCarousel({slice}) {
                         <SplideTrack>
                             {slice.items.map((slide, i) => (
                                 <SplideSlide key={i}>
-                                    <SlideHolder>
-                                        <PrismicRichText render={slide.block_title.richText}/>
-                                        <PrismicRichText render={slide.block_description.richText}/>
+                                    <SlideHolder className="white">
+                                        <div>
+                                            <PrismicRichText render={slide.block_title.richText}/>
+                                            <PrismicRichText render={slide.block_description.richText}/>
+                                        </div>
                                     </SlideHolder>
                                 </SplideSlide>
                             ))}

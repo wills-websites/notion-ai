@@ -2,6 +2,7 @@ import React from "react"
 import {useStaticQuery, graphql} from "gatsby";
 import styled from "styled-components";
 import {GatsbyImage} from "gatsby-plugin-image";
+import {Link} from "gatsby";
 
 const Holder = styled.div`
   background-color: ${props => props.theme.colours.black};
@@ -84,7 +85,9 @@ function Footer() {
                 </Clients>
                 <ContentHolder>
                     <ButtonHolder>
-                        <button className="button dark">NotionAi</button>
+                        <Link to="/">
+                            <button className="button dark">NotionAi</button>
+                        </Link>
                         <button className="button indigo">Start your free trial today</button>
                     </ButtonHolder>
                     <div><p>Location</p>
