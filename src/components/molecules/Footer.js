@@ -20,6 +20,8 @@ const Inner = styled.div`
 `
 
 const Clients = styled.div`
+  line-height: 1.75rem;
+
   .item {
     display: inline-block;
 
@@ -40,6 +42,7 @@ const Clients = styled.div`
 const ContentHolder = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
 `
 
 const ButtonHolder = styled.div`
