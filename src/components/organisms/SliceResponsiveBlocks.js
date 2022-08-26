@@ -9,8 +9,6 @@ import {GatsbyImage} from "gatsby-plugin-image";
 const Holder = styled.div`
   min-height: 100vh;
   width: 100%;
-  display: flex;
-  align-items: center;
 `
 
 const Grid = styled.div`
@@ -18,6 +16,7 @@ const Grid = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   height: inherit;
+  width: inherit;
 `
 
 const Inner = styled.div`
