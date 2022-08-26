@@ -28,17 +28,22 @@ const Grid = styled.div`
 
   > :last-child {
     background-color: ${props => props.theme.colours.black};
-    border-radius: 3rem;
+    border-radius: 1rem;
   }
 `
 
 const Group = styled.div`
   width: 50%;
-  height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  .gatsby-image-wrapper {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 `
 
 function SliceGraphicBlock({slice}) {
@@ -55,7 +60,9 @@ function SliceGraphicBlock({slice}) {
                             </Link>
                         </Group>
                         <Group>
-                            <GatsbyImage alt={item.graphic.alt || "Graphic"} image={item.graphic.gatsbyImageData}/>
+                            <GatsbyImage imgStyle={{objectFit: "contain", borderRadius: "1rem"}}
+                                         alt={item.graphic.alt || "Graphic"}
+                                         image={item.graphic.gatsbyImageData}/>
                         </Group>
                     </Grid>))}
             </Holder>
