@@ -301,24 +301,44 @@ const GlobalStyle = createGlobalStyle`
       border: none;
       color: ${props => props.theme.colours.black};
       background-color: ${props => props.theme.colours.white};
+
+      :hover {
+        color: ${props => props.theme.colours.white};
+        background-color: ${props => props.theme.colours.black};
+      }
     }
 
     &.neutral {
       border: none;
       color: ${props => props.theme.colours.black};
       background-color: ${props => props.theme.colours.lightgrey};
+
+      :hover {
+        color: ${props => props.theme.colours.white};
+        background-color: ${props => props.theme.colours.black};
+      }
     }
 
     &.dark {
       border: none;
       color: ${props => props.theme.colours.white};
-      background-color: ${props => props.theme.colours.darkgrey};
+      background-color: ${props => props.theme.colours.lightgrey};
+
+      :hover {
+        color: ${props => props.theme.colours.black};
+        background-color: ${props => props.theme.colours.white};
+      }
     }
 
     &.indigo {
       border: none;
       color: ${props => props.theme.colours.white};
       background-color: ${props => props.theme.colours.indigo};
+
+      :hover {
+        color: ${props => props.theme.colours.black};
+        background-color: ${props => props.theme.colours.white};
+      }
     }
 
     &.link {
@@ -347,6 +367,11 @@ const GlobalStyle = createGlobalStyle`
       border: none;
       color: ${props => props.theme.colours.black};
       background-color: ${props => props.theme.colours.white};
+
+      :hover {
+        color: ${props => props.theme.colours.white};
+        background-color: ${props => props.theme.colours.black};
+      }
     }
   }
 
@@ -358,6 +383,11 @@ const GlobalStyle = createGlobalStyle`
       border: none;
       color: ${props => props.theme.colours.white};
       background-color: ${props => props.theme.colours.black};
+
+      :hover {
+        color: ${props => props.theme.colours.black};
+        background-color: ${props => props.theme.colours.white};
+      }
     }
   }
 
@@ -384,6 +414,11 @@ const GlobalStyle = createGlobalStyle`
       border: none;
       color: ${props => props.theme.colours.white};
       background-color: ${props => props.theme.colours.black};
+
+      :hover {
+        color: ${props => props.theme.colours.black};
+        background-color: ${props => props.theme.colours.white};
+      }
     }
   }
 
@@ -395,6 +430,11 @@ const GlobalStyle = createGlobalStyle`
       border: none;
       color: ${props => props.theme.colours.black};
       background-color: ${props => props.theme.colours.white};
+
+      :hover {
+        color: ${props => props.theme.colours.white};
+        background-color: ${props => props.theme.colours.black};
+      }
     }
   }
 

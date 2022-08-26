@@ -5,7 +5,8 @@ import GlobalStyles from "../components/atoms/GlobalStyles";
 import {ThemeProvider} from "styled-components";
 import {theme} from "../utils/styling";
 import ColourSchemes from "../components/organisms/ColourSchemes";
-import Transition from "../components/atoms/Transition";
+
+// import Transition from "../components/atoms/Transition";
 
 class Index extends Component {
     render() {
@@ -14,9 +15,7 @@ class Index extends Component {
                 <>
                     <GlobalStyles/>
                     <ColourSchemes path={this.props.location.pathname}>
-                        <Transition location={this.props.location}>
-                            <main>{this.props.children}</main>
-                        </Transition>
+                        <main>{this.props.children}</main>
                     </ColourSchemes>
                 </>
             </ThemeProvider>
