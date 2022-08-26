@@ -1,9 +1,7 @@
-import React, {useState} from "react";
+import React from "react";
 import styled from "styled-components";
 import Navigation from "./Navigation";
 import {Link} from "gatsby";
-import PropTypes from 'prop-types';
-import classNames from "classnames";
 import Container from "../atoms/Container";
 import Logo from '../../assets/svg/logo.inline.svg'
 import HeaderScrollTransition from "../atoms/HeaderScrollTransition";
