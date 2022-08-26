@@ -6,6 +6,8 @@ import PrismicRichText from "../atoms/PrismicRichText";
 import Container from "../atoms/Container";
 
 const Holder = styled.div`
+  min-height: 100vh;
+  width: 100%;
 `
 
 const Inner = styled.div`
