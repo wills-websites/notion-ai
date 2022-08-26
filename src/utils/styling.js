@@ -1,6 +1,8 @@
 export const theme = {
     colours: {
         black: "#000000",
+        enterprise: "#100418",
+        darkpurple: "#291E30",
         darkgrey: "#404040",
         grey: "#ADADAD",
         lightgrey: "rgba(150, 150, 150, 0.25)",

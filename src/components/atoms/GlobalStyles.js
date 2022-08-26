@@ -376,8 +376,6 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${props => props.theme.colours.black};
   }
 
-  }
-
   .black {
     background-color: ${props => props.theme.colours.black};
     color: ${props => props.theme.colours.white};
@@ -389,8 +387,19 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+  .enterprise {
+    background-color: ${props => props.theme.colours.darkpurple};
+    color: ${props => props.theme.colours.white};
+
+    button, .button {
+      border: none;
+      color: ${props => props.theme.colours.black};
+      background-color: ${props => props.theme.colours.white};
+    }
+  }
+
   .dark-theme {
-    background-color: ${props => props.theme.colours.black};
+    background-color: ${props => props.theme.colours.enterprise};
     color: ${props => props.theme.colours.white};
   }
 
