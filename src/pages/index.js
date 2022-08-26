@@ -9,7 +9,7 @@ import Container from "../components/atoms/Container";
 const Holder = styled.div``
 
 const Spacer = styled.div`
-  height: 15vh;
+  height: 10vh;
   width: 100%;
 `
 

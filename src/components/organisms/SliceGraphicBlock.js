@@ -14,7 +14,7 @@ const Holder = styled.div`
 
 const Grid = styled.div`
   width: 100%;
-  height: auto;
+  min-height: 100vh;
   display: flex;
   column-gap: 4rem;
   margin-bottom: 4rem;

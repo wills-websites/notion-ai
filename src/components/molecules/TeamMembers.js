@@ -16,8 +16,7 @@ const Grid = styled.div`
 const Inner = styled.div`
   position: relative;
   height: 50vh;
-  background: rgb(214, 214, 214);
-  background: linear-gradient(180deg, rgba(214, 214, 214, 0.36458333333333337) 62%, rgba(96, 38, 245, 1) 100%);
+  background-color: ${props => props.theme.colours.lightgrey};
   border-radius: 1rem;
 `
 

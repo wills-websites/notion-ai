@@ -3,14 +3,14 @@ import {graphql} from "gatsby";
 import Seo from "../components/molecules/Seo";
 import SlicePicker from "../components/organisms/SlicePicker";
 import styled from 'styled-components'
-import Container from "../components/atoms/Container";
-import PrismicRichText from "../components/atoms/PrismicRichText";
+// import Container from "../components/atoms/Container";
+// import PrismicRichText from "../components/atoms/PrismicRichText";
 
 const Holder = styled.div`
 `
 
 const Spacer = styled.div`
-  height: 15vh;
+  height: 10vh;
   width: 100%;
 `
 

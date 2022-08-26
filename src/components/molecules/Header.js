@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import classNames from "classnames";
 import Container from "../atoms/Container";
 // import HeaderScrollTransition from "../atoms/HeaderScrollTransition";
+import Logo from '../../assets/svg/logo.inline.svg'
 
 const Holder = styled.div`
   width: 100%;
@@ -15,19 +16,15 @@ const Holder = styled.div`
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 3fr;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem 0 1rem 0;
-  @media ( ${props => props.theme.breakpoints.md} ) {
-    padding: 1.5rem 0 1rem 0;
-    grid-template-columns: 1fr 3fr;
-  }
+  padding: 1.5rem 0 1rem 0;
 
   .logo-holder {
     background-color: ${props => props.theme.colours.lightgrey};
     width: min-content;
-    border-radius: 2rem;
+    border-radius: 5rem;
     padding: 0.5rem 2rem;
     backdrop-filter: blur(5px);
 
@@ -42,26 +39,18 @@ const Grid = styled.div`
     }
 
     svg {
-      height: 1.4rem;
+      height: 1.3rem;
       width: auto;
       display: block;
       margin-top: 0.2rem;
       @media ( ${props => props.theme.breakpoints.md} ) {
         margin: 0;
-        height: 1.8rem;
       }
 
       path, rect {
         fill: ${props => props.navOpen ? props.theme.colours.black : props.theme.colours.white};
       }
     }
-  }
-`;
-
-const LargeNavHolder = styled.div`
-  display: none;
-  @media ( ${props => props.theme.breakpoints.md} ) {
-    display: block;
   }
 `;
 
@@ -79,12 +68,10 @@ function Header() {
                 <Grid className={gridClasses} navOpen={navOpen}>
                     <div className="logo-holder">
                         <Link to="/">
-                            <p>NotionAi</p>
+                            <Logo/>
                         </Link>
                     </div>
-                    <LargeNavHolder>
-                        <Navigation/>
-                    </LargeNavHolder>
+                    <Navigation/>
                 </Grid>
             </Container>
         </Holder>

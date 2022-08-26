@@ -3,37 +3,32 @@ import {Link} from "gatsby"
 import styled from "styled-components";
 
 const Holder = styled.div`
+  width: fit-content;
+  margin-left: auto;
+
   ul {
     list-style: none;
     margin: 0 0 0 auto;
     background-color: ${props => props.theme.colours.lightgrey};
     backdrop-filter: blur(8px);
-    width: min-content;
     border-radius: 2rem;
     padding: 0;
-    @media ( ${props => props.theme.breakpoints.md} ) {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      color: ${props => props.theme.colours.white};
-    }
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: ${props => props.theme.colours.white};
+
 
     a {
       text-decoration: none;
     }
 
-    // a[aria-current="page"] {
-      //   color: ${props => props.theme.colours.indigo};
-    // }
-
     li {
-      ${(props) => props.theme.fluidType(1)};
-      margin: 1rem 0;
-      border-radius: 1rem;
+      margin: 0;
+      padding: 0.5rem;
+      border-radius: 5rem;
       @media ( ${props => props.theme.breakpoints.md} ) {
-        margin: 0;
         padding: 0.5rem 2rem;
-        ${(props) => props.theme.fluidType(-1)};
       }
 
       &:hover {
@@ -61,7 +56,7 @@ const Dropdown = styled.div`
       ${(props) => props.theme.fluidType(-1)};
       background-color: rgba(0, 0, 0, 0.2);
       backdrop-filter: blur(8px);
-      border-radius: 2rem;
+      border-radius: 5rem;
       padding: 0.5rem 2rem;
       color: ${props => props.theme.colours.white};
     }
@@ -93,14 +88,17 @@ class Navigation extends Component {
                             </div>
                         </Dropdown>
                         <Link to="/plans">
-                            <li>Plans</li>
+                            <li>Marketplace</li>
                         </Link>
                         <Link to="/articles">
-                            <li>Articles</li>
+                            <li>The Lab</li>
                         </Link>
                         <Link to="/about">
                             <li>About</li>
                         </Link>
+                        <button className="button link">
+                            <li>Login</li>
+                        </button>
                     </ul>
                 </Holder>
             </nav>
