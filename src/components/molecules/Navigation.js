@@ -47,23 +47,31 @@ const Dropdown = styled.div`
     display: none;
     position: absolute;
     z-index: 200;
+    background-color: ${props => props.theme.colours.lightgrey};
+    backdrop-filter: blur(8px);
+    border-radius: 2rem;
+    width: 100%;
 
     li {
       width: 100%;
-      display: block;
-      margin: 0.5rem 0;
       text-align: center;
-      ${(props) => props.theme.fluidType(-1)};
-      background-color: rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(8px);
       border-radius: 5rem;
-      padding: 0.5rem 2rem;
       color: ${props => props.theme.colours.white};
+      padding: 0.5rem;
+
+      :hover {
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+
+      @media ( ${props => props.theme.breakpoints.md} ) {
+        padding: 0.5rem 2rem;
+      }
+
     }
   }
 
   &:hover .content {
-    display: block;
+    display: flex;
   }
 `
 
