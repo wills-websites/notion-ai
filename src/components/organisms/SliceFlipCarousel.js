@@ -8,7 +8,11 @@ import {Splide, SplideSlide, SplideTrack} from '@splidejs/react-splide'
 import Container from "../atoms/Container";
 
 const Holder = styled.div`
+  min-height: 100vh;
+  width: 100%;
+`
 
+const Inner = styled.div`
   > :first-child {
     margin-top: 6rem;
   }
@@ -49,9 +53,9 @@ function SliceFlipCarousel({slice}) {
         arrows: false,
     }
     return (
-        <div className={theme1 === true ? 'dark-theme' : ''}>
+        <Holder className={theme1 === true ? 'dark-theme' : ''}>
             <Container>
-                <Holder>
+                <Inner>
                     <PrismicRichText render={heading.richText}/>
                     <Splide
                         options={options}
@@ -72,9 +76,9 @@ function SliceFlipCarousel({slice}) {
                             </SplideTrack>
                         </Group>
                     </Splide>
-                </Holder>
+                </Inner>
             </Container>
-        </div>
+        </Holder>
     )
 }
 
