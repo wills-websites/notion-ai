@@ -43,6 +43,9 @@ const Block = styled.div` {
   padding: 1rem;
   position: relative;
 
+  * {
+    z-index: 2;
+  }
 
   > div > :first-child {
     margin-top: 0;
