@@ -26,6 +26,10 @@ const Content = styled.div`
   justify-content: space-between;
   height: 100%;
   padding: 1rem;
+
+  * {
+    z-index: 2;
+  }
 `
 
 const ImageHolder = styled.div`
@@ -39,6 +43,13 @@ const ImageHolder = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+
+  .gatsby-image-wrapper {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 `
 
 function TeamMembers({mappedItem, team_heading}) {
@@ -59,7 +70,8 @@ function TeamMembers({mappedItem, team_heading}) {
                         </Content>
 
                         <ImageHolder>
-                            <GatsbyImage alt={item.photo.alt}
+                            <GatsbyImage imgStyle={{objectFit: "contain", borderRadius: "1rem"}}
+                                         alt={item.photo.alt}
                                          image={item.photo.gatsbyImageData}/>
                         </ImageHolder>
                     </Inner>
