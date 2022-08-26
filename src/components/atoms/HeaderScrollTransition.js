@@ -11,18 +11,6 @@ const Holder = styled.div`
   transform: ${props => props.show ? 'translateY(0)' : 'translateY(-100%)'};
   transition: transform 0.25s ease-in-out;
 
-  &:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    opacity: ${props => props.transparent ? 0 : 1};
-    transition: opacity 0.5s ease-in-out;
-  }
-
   .header-grid {
     position: relative;
     z-index: 2;
