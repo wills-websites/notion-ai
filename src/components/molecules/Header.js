@@ -5,8 +5,8 @@ import {Link} from "gatsby";
 import PropTypes from 'prop-types';
 import classNames from "classnames";
 import Container from "../atoms/Container";
-// import HeaderScrollTransition from "../atoms/HeaderScrollTransition";
 import Logo from '../../assets/svg/logo.inline.svg'
+import HeaderScrollTransition from "../atoms/HeaderScrollTransition";
 
 const Holder = styled.div`
   width: 100%;
@@ -19,7 +19,7 @@ const Grid = styled.div`
   grid-template-columns: 1fr 3fr;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 0 1rem 0;
+  padding: 1.5rem 0;
 
   .logo-holder {
     background-color: ${props => props.theme.colours.lightgrey};
@@ -28,44 +28,33 @@ const Grid = styled.div`
     padding: 0.5rem 2rem;
     backdrop-filter: blur(5px);
 
-    a, p {
-      text-decoration: none;
-      margin: 0;
-      color: white;
-      ${(props) => props.theme.fluidType(1)};
-      @media ( ${props => props.theme.breakpoints.md} ) {
-        ${(props) => props.theme.fluidType(-1)};
-      }
-    }
-
     svg {
-      height: 1.3rem;
+      height: 1.2rem;
       width: auto;
       display: block;
       margin-top: 0.2rem;
       @media ( ${props => props.theme.breakpoints.md} ) {
         margin: 0;
       }
-
-      path, rect {
-        fill: ${props => props.navOpen ? props.theme.colours.black : props.theme.colours.white};
-      }
     }
   }
 `;
 
+const Banner = styled.div`
+  height: auto;
+  width: 100%;
+  background-color: rgba(150, 150, 150, 0.25);
+  padding: 0.3rem 0;
+  text-align: center;
+`
 
 function Header() {
-    const [navOpen, setNavOpen] = useState(false);
-    let gridClasses = classNames({
-        'header-grid': true,
-        'nav-open': navOpen,
-
-    });
     return (
         <Holder>
             <Container>
-                <Grid className={gridClasses} navOpen={navOpen}>
+                <HeaderScrollTransition><Banner>Get early access to the next generation of AI-augmented executive
+                    intelligence products. <Link to="/">Join the Lab</Link></Banner></HeaderScrollTransition>
+                <Grid>
                     <div className="logo-holder">
                         <Link to="/">
                             <Logo/>
@@ -78,9 +67,4 @@ function Header() {
     );
 }
 
-Header.propTypes = {
-    dark: PropTypes.bool,
-    showAnnouncement: PropTypes.bool,
-    inverseAnnouncement: PropTypes.bool,
-};
 export default Header;

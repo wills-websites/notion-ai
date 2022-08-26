@@ -33,7 +33,6 @@ const Grid = styled.div`
     @media (${(props) => props.theme.breakpoints.md}) {
       padding: 1rem;
     }
-
   }
 
   > :last-child {
