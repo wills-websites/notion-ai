@@ -20,11 +20,16 @@ const Grid = styled.div`
 
 const Inner = styled.div`
   display: flex;
-  flex-direction: row;
-  height: 65vh;
+  flex-direction: column;
+  height: 100vh;
+  row-gap: 1rem;
   min-width: calc(33% - 0.5rem);
-  column-gap: 1rem;
   padding-bottom: 1rem;
+  @media (${(props) => props.theme.breakpoints.md}) {
+    flex-direction: row;
+    height: 65vh;
+    column-gap: 1rem;
+  }
 `
 
 const Block = styled.div` {
@@ -85,7 +90,7 @@ function SliceResponsiveBlocks({slice}) {
                         {slice.items.map((item, i) => (
                             <Block className={item.theme} key={i}>
                                 <div>
-                                    {item.block_title.text && <h4>{item.block_title.text}</h4>}
+                                    {item.block_title.text && <p>{item.block_title.text}</p>}
                                     <PrismicRichText render={item.block_description.richText}/>
                                 </div>
                                 {item.block_cta.text &&
