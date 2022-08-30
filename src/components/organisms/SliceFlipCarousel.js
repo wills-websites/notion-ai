@@ -6,6 +6,7 @@ import PrismicRichText from "../atoms/PrismicRichText";
 import {Splide, SplideSlide, SplideTrack} from '@splidejs/react-splide'
 // import {AutoScroll} from "@splidejs/splide-extension-auto-scroll";
 import Container from "../atoms/Container";
+import FlipAnimation from "./FlipAnimation";
 
 const Holder = styled.div`
   min-height: 100vh;
@@ -31,17 +32,6 @@ const Group = styled.div`
 `
 
 const SlideHolder = styled.div`
-  border-radius: 1rem;
-  height: inherit;
-  width: 100%;
-  padding: 2rem;
-
-  > div {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
 `
 
 function SliceFlipCarousel({slice}) {
@@ -50,10 +40,12 @@ function SliceFlipCarousel({slice}) {
         type: 'loop',
         gap: '1rem',
         autoplay: true,
+        interval: 2000,
         resetProgress: false,
         perPage: 3,
         height: '50vh',
         pagination: false,
+        drag: false,
         arrows: false,
         breakpoints: {
             768: {
@@ -76,11 +68,8 @@ function SliceFlipCarousel({slice}) {
                                 <SplideTrack>
                                     {slice.items.map((slide, i) => (
                                         <SplideSlide key={i}>
-                                            <SlideHolder className="transparent">
-                                                <div>
-                                                    <PrismicRichText render={slide.description.richText}/>
-                                                </div>
-                                            </SlideHolder>
+                                            <FlipAnimation front={slide.logo.gatsbyImageData}
+                                                           back={slide.description.richText}/>
                                         </SplideSlide>
                                     ))}
                                 </SplideTrack>
