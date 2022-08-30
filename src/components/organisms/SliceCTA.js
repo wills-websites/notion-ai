@@ -13,9 +13,7 @@ const Holder = styled.div`
 `
 
 function SliceCTA({slice}) {
-    const {
-        text, button
-    } = slice.primary;
+    const {text, button} = slice.primary;
 
     return (
         <Container>
@@ -42,6 +40,7 @@ export const query = graphql`
         primary {
             text {
                 richText
+                text
             }
             button {
                 richText

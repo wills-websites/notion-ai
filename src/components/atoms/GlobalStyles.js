@@ -133,7 +133,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   em, i {
-    font-style: italic;
+    font-style: normal;
+    color: ${props => props.theme.colours.grey}
   }
 
   strong, b {
