@@ -13,28 +13,36 @@ const Holder = styled.div`
 `;
 
 const Grid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 3fr;
+  display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem 0;
 
   .logo-holder {
-    background-color: ${props => props.theme.colours.lightgrey};
-    width: min-content;
-    border-radius: 5rem;
-    padding: 0.5rem 2rem;
-    backdrop-filter: blur(5px);
+    display: flex;
+    column-gap: 1rem;
 
-    svg {
-      height: 1.2rem;
-      width: auto;
-      display: block;
-      margin-top: 0.2rem;
-      @media ( ${props => props.theme.breakpoints.md} ) {
-        margin: 0;
+    a {
+      width: available;
+      background-color: ${props => props.theme.colours.lightgrey};
+      color: ${props => props.theme.colours.white};
+      border-radius: 5rem;
+      padding: 0.5rem 2rem;
+      backdrop-filter: blur(5px);
+      text-decoration: none;
+
+      svg {
+        height: 1.2rem;
+        width: auto;
+        display: block;
+        margin-top: 0.2rem;
+        @media ( ${props => props.theme.breakpoints.md} ) {
+          margin: 0;
+        }
       }
     }
+
+
   }
 `;
 
@@ -56,6 +64,9 @@ function Header() {
                     <div className="logo-holder">
                         <Link to="/">
                             <Logo/>
+                        </Link>
+                        <Link to="/">
+                            Start your free trial
                         </Link>
                     </div>
                     <Navigation/>

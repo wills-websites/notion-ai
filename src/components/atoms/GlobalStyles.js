@@ -349,11 +349,10 @@ const GlobalStyle = createGlobalStyle`
 
     &.icon {
       border: none;
-      padding: 0;
       background-color: transparent;
 
       svg {
-        height: 3rem;
+        height: 1rem;
         width: auto;
         display: block;
       }
