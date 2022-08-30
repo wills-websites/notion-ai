@@ -5,6 +5,10 @@ import {GatsbyImage} from "gatsby-plugin-image";
 
 const Holder = styled.div`
   padding: 6rem 0;
+
+  > :first-child {
+    margin-bottom: 4rem;
+  }
 `;
 
 const Grid = styled.div`

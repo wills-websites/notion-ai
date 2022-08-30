@@ -15,6 +15,7 @@ const Holder = styled.div`
 const Inner = styled.div`
   > :first-child {
     margin-top: 6rem;
+    margin-bottom: 4rem;
   }
 
   > :nth-child(even) {

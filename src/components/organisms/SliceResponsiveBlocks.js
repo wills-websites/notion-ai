@@ -17,6 +17,10 @@ const Grid = styled.div`
   justify-content: flex-end;
   height: inherit;
   width: inherit;
+
+  > :first-child {
+    margin-bottom: 3rem;
+  }
 `
 
 const Inner = styled.div`
