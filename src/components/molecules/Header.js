@@ -17,6 +17,9 @@ const Holder = styled.div`
 const Wrapper = styled.div`
   max-width: ${(props) => props.theme.typography.maxScreen}px;
   margin: 0 auto;
+  @media ( ${props => props.theme.breakpoints.lg} ) {
+    padding: 0 1rem;
+  }
 
   > :first-child {
     margin-top: 0;
