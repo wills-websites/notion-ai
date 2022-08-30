@@ -23,18 +23,34 @@ const Inner = styled.div`
 
 const Block = styled.div`
   width: 100%;
-  height: 60vh;
   background-color: rgba(150, 150, 150, 0.25);
   display: flex;
   padding: 2rem;
   border-radius: 1rem;
 `
 
-const Group = styled.div`
+const FirstGroup = styled.div`
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+`
+
+const SecondGroup = styled.div`
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+
+  .extra-content {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+
+    button {
+      height: min-content;
+    }
+  }
 `
 
 const Price = styled.div`
@@ -55,18 +71,27 @@ function SlicePlanType({slice}) {
                     <PrismicRichText render={heading.richText}/>
                     {slice.items.map((item, i) => (
                         <Block key={i}>
-                            <Group>
+                            <FirstGroup>
                                 <div>
                                     <PrismicRichText render={item.subheading.richText}/>
                                     <PrismicRichText render={item.catchline.richText}/>
                                 </div>
                                 <button rel="noreferrer" className="button light"><PrismicRichText
                                     render={item.cta.richText}/></button>
-                            </Group>
-                            <Group>
+                            </FirstGroup>
+                            <SecondGroup>
                                 <PrismicRichText render={item.content.richText}/>
-                                <Price><h2>USD {item.price}</h2><p>/ monthly</p></Price>
-                            </Group>
+                                <div className="extra-content">
+                                    {item.price && <Price><h2>USD {item.price}</h2><PrismicRichText
+                                        render={item.rate.richText}/></Price>}
+                                    {item.users &&
+                                        <button rel="noreferrer" className="button neutral">{item.users} Users</button>}
+                                    {item.topics &&
+                                        <button rel="noreferrer"
+                                                className="button neutral">{item.topics} Topics</button>
+                                    }
+                                </div>
+                            </SecondGroup>
                         </Block>
                     ))}
                 </Inner>
@@ -104,6 +129,11 @@ export const query = graphql`
                 richText
             }
             price
+            topics
+            users
+            rate {
+                richText
+            }
         }
         slice_type
     }
