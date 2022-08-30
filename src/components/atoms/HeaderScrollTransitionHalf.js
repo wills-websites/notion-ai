@@ -5,9 +5,8 @@ import throttle from 'lodash.throttle';
 const Holder = styled.div`
   z-index: 500;
   @media ( ${props => props.theme.breakpoints.md} ) {
-    transform: ${props => props.show ? 'translateY(0)' : 'translateY(-100%)'};
+    transform: ${props => props.show ? 'translateY(0)' : 'translateY(-50%)'};
     transition: transform 0.25s ease-in-out;
-    padding-bottom: 0.5rem;
   }
 
 
@@ -17,7 +16,7 @@ const Holder = styled.div`
   }
 `;
 
-function HeaderScrollTransition({children}) {
+function HeaderScrollTransitionHalf({children}) {
     const [transparent, setTransparent] = useState(true);
     const [show, setShow] = useState(true);
     const [lastScrollTop, setLastScrollTop] = useState(0);
@@ -55,4 +54,4 @@ function HeaderScrollTransition({children}) {
     )
 }
 
-export default HeaderScrollTransition;
+export default HeaderScrollTransitionHalf;

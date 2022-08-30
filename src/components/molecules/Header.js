@@ -6,6 +6,7 @@ import Container from "../atoms/Container";
 import Logo from '../../assets/svg/logo-black.inline.svg'
 import HeaderScrollTransition from "../atoms/HeaderScrollTransition";
 import MobileNavigation from "./MobileNavigation";
+import HeaderScrollTransitionHalf from "../atoms/HeaderScrollTransitionHalf";
 
 const Holder = styled.div`
   width: 100%;
@@ -13,13 +14,26 @@ const Holder = styled.div`
   z-index: 400;
 `;
 
+const Wrapper = styled.div`
+  max-width: ${(props) => props.theme.typography.maxScreen}px;
+  margin: 0 auto;
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+`
+
 const Grid = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 3rem 0;
+  padding: 0.5rem;
   @media ( ${props => props.theme.breakpoints.lg} ) {
-    padding: 1.5rem 0;
+    padding: 0;
   }
 
 
@@ -90,29 +104,32 @@ const SmallNavigation = styled.div`
 function Header() {
     return (
         <Holder>
-            <Container>
-                <HeaderScrollTransition>
-                    <Banner>Get early access to the next generation of AI-augmented executive
-                        intelligence products. <Link to="/">Join the Lab</Link>
-                    </Banner>
-                </HeaderScrollTransition>
-                <Grid>
-                    <div className="logo-holder">
-                        <Link to="/">
-                            <Logo/>
-                        </Link>
-                        <Link className="trial-button" to="/">
-                            Start your free trial
-                        </Link>
-                    </div>
-                    <LargeNavigation>
-                        <Navigation/>
-                    </LargeNavigation>
-                    <SmallNavigation>
-                        <MobileNavigation/>
-                    </SmallNavigation>
-                </Grid>
-            </Container>
+
+            <HeaderScrollTransition>
+                <Banner>Get early access to the next generation of AI-augmented executive
+                    intelligence products. <Link to="/">Join the Lab</Link>
+                </Banner>
+            </HeaderScrollTransition>
+            <HeaderScrollTransitionHalf>
+                <Wrapper>
+                    <Grid>
+                        <div className="logo-holder">
+                            <Link to="/">
+                                <Logo/>
+                            </Link>
+                            <Link className="trial-button" to="/">
+                                Start your free trial
+                            </Link>
+                        </div>
+                        <LargeNavigation>
+                            <Navigation/>
+                        </LargeNavigation>
+                        <SmallNavigation>
+                            <MobileNavigation/>
+                        </SmallNavigation>
+                    </Grid>
+                </Wrapper>
+            </HeaderScrollTransitionHalf>
         </Holder>
     );
 }
