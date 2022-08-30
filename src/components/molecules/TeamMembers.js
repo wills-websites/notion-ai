@@ -13,8 +13,13 @@ const Holder = styled.div`
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 1rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  row-gap: 1rem;
+  @media ( ${props => props.theme.breakpoints.md} ) {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
+  }
 `;
 
 const Inner = styled.div`

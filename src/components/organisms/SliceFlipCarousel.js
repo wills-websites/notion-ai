@@ -55,6 +55,11 @@ function SliceFlipCarousel({slice}) {
         height: '50vh',
         pagination: false,
         arrows: false,
+        breakpoints: {
+            768: {
+                perPage: 1,
+            },
+        }
     }
     return (
         <Holder className={theme1 === true ? 'dark-theme' : ''}>

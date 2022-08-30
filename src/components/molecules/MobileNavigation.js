@@ -21,7 +21,7 @@ function MobileNavigation() {
             <Holder>
                 <button className="menu-button button neutral" onClick={() => setToggle(!toggle)}>Menu</button>
                 {toggle &&
-                    <Overlay/>
+                    <Overlay hide={() => setToggle(false)}/>
                 }
             </Holder>
         </nav>

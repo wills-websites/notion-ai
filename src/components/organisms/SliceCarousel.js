@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import {graphql} from "gatsby";
 import PrismicRichText from "../atoms/PrismicRichText";
 import {Splide, SplideSlide, SplideTrack} from '@splidejs/react-splide'
-import {AutoScroll} from "@splidejs/splide-extension-auto-scroll";
+// import {AutoScroll} from "@splidejs/splide-extension-auto-scroll";
 import Container from "../atoms/Container";
 
 const Wrapper = styled.div`
@@ -56,34 +56,41 @@ function SliceCarousel({slice}) {
         height: '50vh',
         pagination: false,
         arrows: false,
+        breakpoints: {
+            768: {
+                perPage: 1,
+            },
+        }
     }
     return (
         <Wrapper>
-            <Container>
-                <Holder>
-                    <PrismicRichText render={heading.richText}/>
-                    <Splide
-                        options={options}
-                        aria-labelledby="autoplay-carousel"
-                        hasTrack={false}
-                    >
-                        <Group>
-                            <SplideTrack>
-                                {slice.items.map((slide, i) => (
-                                    <SplideSlide key={i}>
-                                        <SlideHolder className="white">
-                                            <div>
-                                                <PrismicRichText render={slide.block_title.richText}/>
-                                                <PrismicRichText render={slide.block_description.richText}/>
-                                            </div>
-                                        </SlideHolder>
-                                    </SplideSlide>
-                                ))}
-                            </SplideTrack>
-                        </Group>
-                    </Splide>
-                </Holder>
-            </Container>
+            <div>
+                <Container>
+                    <Holder>
+                        <PrismicRichText render={heading.richText}/>
+                        <Splide
+                            options={options}
+                            aria-labelledby="autoplay-carousel"
+                            hasTrack={false}
+                        >
+                            <Group>
+                                <SplideTrack>
+                                    {slice.items.map((slide, i) => (
+                                        <SplideSlide key={i}>
+                                            <SlideHolder className="white">
+                                                <div>
+                                                    <PrismicRichText render={slide.block_title.richText}/>
+                                                    <PrismicRichText render={slide.block_description.richText}/>
+                                                </div>
+                                            </SlideHolder>
+                                        </SplideSlide>
+                                    ))}
+                                </SplideTrack>
+                            </Group>
+                        </Splide>
+                    </Holder>
+                </Container>
+            </div>
         </Wrapper>
     )
 }

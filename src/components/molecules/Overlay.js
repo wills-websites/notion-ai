@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React from "react"
 import {Link} from "gatsby"
 import styled from "styled-components";
 import useLockBodyScroll from "../../hooks/useLockBodyScroll";
@@ -27,7 +27,7 @@ const Holder = styled.div`
 
       li {
         margin: 0;
-        padding: calc(0.5rem - 5px);
+        padding: 0.75rem;
         border-radius: 5rem;
         background-color: ${props => props.theme.colours.lightgrey};
         text-align: center;
@@ -37,24 +37,24 @@ const Holder = styled.div`
   }
 `
 
-function Overlay() {
+function Overlay({hide}) {
     useLockBodyScroll()
     return (
         <Holder>
             <ul>
-                <Link to="/">
+                <Link onClick={hide} to="/">
                     <li>Start your free trial today</li>
                 </Link>
-                <Link to="products">
+                <Link to="/products">
                     <li>Products</li>
                 </Link>
-                <Link to="plans">
+                <Link onClick={hide} to="/plans">
                     <li>Plans</li>
                 </Link>
-                <Link to="articles">
+                <Link onClick={hide} to="/articles">
                     <li>Articles</li>
                 </Link>
-                <Link to="about">
+                <Link onClick={hide} to="/about">
                     <li>About</li>
                 </Link>
             </ul>
