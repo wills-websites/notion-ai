@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
-import '../utils/fontface.css';
+// import '../utils/fontface.css';
 import GlobalStyles from "../components/atoms/GlobalStyles";
 import {ThemeProvider} from "styled-components";
 import {theme} from "../utils/styling";
