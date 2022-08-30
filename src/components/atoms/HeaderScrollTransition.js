@@ -8,8 +8,11 @@ const Holder = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  transform: ${props => props.show ? 'translateY(0)' : 'translateY(-100%)'};
-  transition: transform 0.25s ease-in-out;
+  @media ( ${props => props.theme.breakpoints.md} ) {
+    transform: ${props => props.show ? 'translateY(0)' : 'translateY(-100%)'};
+    transition: transform 0.25s ease-in-out;
+  }
+
 
   .header-grid {
     position: relative;

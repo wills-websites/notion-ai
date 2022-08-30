@@ -94,7 +94,7 @@ function Navigation() {
             <Holder>
                 <ul>
                     <Dropdown>
-                        <li onClick={() => setToggle(true)}>Products</li>
+                        <li onClick={() => setToggle(!toggle)}>Products</li>
                         {toggle && <div className="content">
                             <div>
                                 <Link onClick={() => setToggle(false)} to="/air">

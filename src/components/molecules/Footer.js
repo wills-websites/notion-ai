@@ -42,7 +42,11 @@ const Clients = styled.div`
 const ContentHolder = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  flex-direction: column;
+  @media ( ${props => props.theme.breakpoints.lg} ) {
+    flex-direction: row;
+    align-items: flex-end;
+  }
 `
 
 const ButtonHolder = styled.div`
