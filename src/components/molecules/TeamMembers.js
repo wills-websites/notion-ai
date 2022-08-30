@@ -18,6 +18,7 @@ const Grid = styled.div`
   row-gap: 1rem;
   @media ( ${props => props.theme.breakpoints.md} ) {
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
     column-gap: 1rem;
   }
 `;
