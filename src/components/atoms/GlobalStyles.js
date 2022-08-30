@@ -410,10 +410,14 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${props => props.theme.colours.black};
     color: ${props => props.theme.colours.white};
 
+    p:first-child {
+      color: ${props => props.theme.colours.indigo};
+    }
+
     button, .button {
       border: none;
-      color: ${props => props.theme.colours.white};
-      background-color: ${props => props.theme.colours.black};
+      color: ${props => props.theme.colours.black};
+      background-color: ${props => props.theme.colours.white};
 
       :hover {
         color: ${props => props.theme.colours.black};
