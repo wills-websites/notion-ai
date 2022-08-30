@@ -9,6 +9,9 @@ import {GatsbyImage} from "gatsby-plugin-image";
 const Holder = styled.div`
   min-height: 100vh;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `
 
 const Grid = styled.div`
@@ -91,41 +94,45 @@ function SliceResponsiveBlocks({slice}) {
 
     return (
         <Holder className={slice.primary.theme === true ? 'dark-theme' : ''}>
-            <Container>
-                <Grid>
-                    {heading.richText && <PrismicRichText render={heading.richText}/>}
-                    <Inner>
-                        {slice.items.map((item, i) => (
-                            <Block className={item.theme} key={i}>
-                                <div>
-                                    {item.block_title.text && <p>{item.block_title.text}</p>}
-                                    <PrismicRichText render={item.block_description.richText}/>
-                                </div>
-                                {item.block_cta.text &&
-                                    <Link to="/">
-                                        <button aria-label="button" className="button">{item.block_cta.text}</button>
-                                    </Link>}
+            <div>
+                <Container>
+                    <Grid>
+                        {heading.richText && <PrismicRichText render={heading.richText}/>}
+                        <Inner>
+                            {slice.items.map((item, i) => (
+                                <Block className={item.theme} key={i}>
+                                    <div>
+                                        {item.block_title.richText &&
+                                            <PrismicRichText render={item.block_title.richText}/>}
+                                        <PrismicRichText render={item.block_description.richText}/>
+                                    </div>
+                                    {item.block_cta.text &&
+                                        <Link to="/">
+                                            <button aria-label="button"
+                                                    className="button">{item.block_cta.text}</button>
+                                        </Link>}
 
-                                <MediaWrapper>
-                                    {item.video.url &&
-                                        <video
-                                            autoPlay
-                                            muted
-                                            loop
-                                            playsInline>
-                                            <source src={item.video.url} type="video/mp4"/>
-                                            Your browser does not support the video tag.
-                                        </video>}
-                                    {item.block_image.gatsbyImageData &&
-                                        <GatsbyImage alt={item.block_image.alt}
-                                                     image={item.block_image.gatsbyImageData}/>
-                                    }
-                                </MediaWrapper>
+                                    <MediaWrapper>
+                                        {item.video.url &&
+                                            <video
+                                                autoPlay
+                                                muted
+                                                loop
+                                                playsInline>
+                                                <source src={item.video.url} type="video/mp4"/>
+                                                Your browser does not support the video tag.
+                                            </video>}
+                                        {item.block_image.gatsbyImageData &&
+                                            <GatsbyImage alt={item.block_image.alt}
+                                                         image={item.block_image.gatsbyImageData}/>
+                                        }
+                                    </MediaWrapper>
 
-                            </Block>))}
-                    </Inner>
-                </Grid>
-            </Container>
+                                </Block>))}
+                        </Inner>
+                    </Grid>
+                </Container>
+            </div>
         </Holder>
     )
 }
@@ -149,6 +156,7 @@ export const query = graphql`
             theme
             block_title {
                 text
+                richText
             }
             block_description {
                 richText

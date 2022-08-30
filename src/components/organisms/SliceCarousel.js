@@ -7,6 +7,14 @@ import {Splide, SplideSlide, SplideTrack} from '@splidejs/react-splide'
 import {AutoScroll} from "@splidejs/splide-extension-auto-scroll";
 import Container from "../atoms/Container";
 
+const Wrapper = styled.div`
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`
+
 const Holder = styled.div`
 
   > :first-child {
@@ -50,31 +58,33 @@ function SliceCarousel({slice}) {
         arrows: false,
     }
     return (
-        <Container>
-            <Holder>
-                <PrismicRichText render={heading.richText}/>
-                <Splide
-                    options={options}
-                    aria-labelledby="autoplay-carousel"
-                    hasTrack={false}
-                >
-                    <Group>
-                        <SplideTrack>
-                            {slice.items.map((slide, i) => (
-                                <SplideSlide key={i}>
-                                    <SlideHolder className="white">
-                                        <div>
-                                            <PrismicRichText render={slide.block_title.richText}/>
-                                            <PrismicRichText render={slide.block_description.richText}/>
-                                        </div>
-                                    </SlideHolder>
-                                </SplideSlide>
-                            ))}
-                        </SplideTrack>
-                    </Group>
-                </Splide>
-            </Holder>
-        </Container>
+        <Wrapper>
+            <Container>
+                <Holder>
+                    <PrismicRichText render={heading.richText}/>
+                    <Splide
+                        options={options}
+                        aria-labelledby="autoplay-carousel"
+                        hasTrack={false}
+                    >
+                        <Group>
+                            <SplideTrack>
+                                {slice.items.map((slide, i) => (
+                                    <SplideSlide key={i}>
+                                        <SlideHolder className="white">
+                                            <div>
+                                                <PrismicRichText render={slide.block_title.richText}/>
+                                                <PrismicRichText render={slide.block_description.richText}/>
+                                            </div>
+                                        </SlideHolder>
+                                    </SplideSlide>
+                                ))}
+                            </SplideTrack>
+                        </Group>
+                    </Splide>
+                </Holder>
+            </Container>
+        </Wrapper>
     )
 }
 

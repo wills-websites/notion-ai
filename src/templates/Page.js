@@ -10,7 +10,7 @@ const Holder = styled.div`
 `
 
 const Spacer = styled.div`
-  height: 10vh;
+  height: 5vh;
   width: 100%;
 `
 

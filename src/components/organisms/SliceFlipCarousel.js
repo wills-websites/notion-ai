@@ -10,6 +10,9 @@ import Container from "../atoms/Container";
 const Holder = styled.div`
   min-height: 100vh;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `
 
 const Inner = styled.div`
@@ -55,30 +58,32 @@ function SliceFlipCarousel({slice}) {
     }
     return (
         <Holder className={theme1 === true ? 'dark-theme' : ''}>
-            <Container>
-                <Inner>
-                    <PrismicRichText render={heading.richText}/>
-                    <Splide
-                        options={options}
-                        aria-labelledby="autoplay-carousel"
-                        hasTrack={false}
-                    >
-                        <Group>
-                            <SplideTrack>
-                                {slice.items.map((slide, i) => (
-                                    <SplideSlide key={i}>
-                                        <SlideHolder className="transparent">
-                                            <div>
-                                                <PrismicRichText render={slide.description.richText}/>
-                                            </div>
-                                        </SlideHolder>
-                                    </SplideSlide>
-                                ))}
-                            </SplideTrack>
-                        </Group>
-                    </Splide>
-                </Inner>
-            </Container>
+            <div>
+                <Container>
+                    <Inner>
+                        <PrismicRichText render={heading.richText}/>
+                        <Splide
+                            options={options}
+                            aria-labelledby="autoplay-carousel"
+                            hasTrack={false}
+                        >
+                            <Group>
+                                <SplideTrack>
+                                    {slice.items.map((slide, i) => (
+                                        <SplideSlide key={i}>
+                                            <SlideHolder className="transparent">
+                                                <div>
+                                                    <PrismicRichText render={slide.description.richText}/>
+                                                </div>
+                                            </SlideHolder>
+                                        </SplideSlide>
+                                    ))}
+                                </SplideTrack>
+                            </Group>
+                        </Splide>
+                    </Inner>
+                </Container>
+            </div>
         </Holder>
     )
 }
