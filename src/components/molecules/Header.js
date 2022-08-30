@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Navigation from "./Navigation";
 import {Link} from "gatsby";
 import Container from "../atoms/Container";
-import Logo from '../../assets/svg/logo.inline.svg'
+import Logo from '../../assets/svg/logo-black.inline.svg'
 import HeaderScrollTransition from "../atoms/HeaderScrollTransition";
 
 const Holder = styled.div`
@@ -25,7 +25,7 @@ const Grid = styled.div`
     a {
       width: available;
       background-color: ${props => props.theme.colours.lightgrey};
-      color: ${props => props.theme.colours.white};
+      color: ${props => props.theme.textColour};
       border-radius: 5rem;
       padding: 0.5rem 2rem;
       backdrop-filter: blur(5px);
@@ -36,6 +36,11 @@ const Grid = styled.div`
         width: auto;
         display: block;
         margin-top: 0.2rem;
+
+        path {
+          fill: ${props => props.theme.textColour};
+        }
+
         @media ( ${props => props.theme.breakpoints.md} ) {
           margin: 0;
         }
@@ -52,6 +57,7 @@ const Banner = styled.div`
   background-color: rgba(150, 150, 150, 0.25);
   padding: 0.3rem 0;
   text-align: center;
+  color: ${props => props.theme.textColour};
 `
 
 function Header() {

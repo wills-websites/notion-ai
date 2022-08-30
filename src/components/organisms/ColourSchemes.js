@@ -28,7 +28,7 @@ function ColourSchemes({children, path}) {
     }, [path]);
 
     return (
-        <ThemeProvider theme={schemes}>
+        <ThemeProvider theme={scheme}>
             <Header/>
             {children}
             <Footer/>
